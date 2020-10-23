@@ -5,3 +5,4 @@
 
  * Have fun and a good time programming the quiz.
  * We will have very much fun !!! JUHU 
+ * Lena Tauchner
