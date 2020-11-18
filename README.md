@@ -4,5 +4,3 @@
  * Used technologies: HTML, CSS, JS, PHP, SQL.
 
  * Have fun and a good time programming the quiz.
- * We will have very much fun !!! JUHU 
- * Lena Tauchner
