@@ -1,0 +1,58 @@
+body {
+  background: #99D6FF;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#header {
+  display: flex;
+  justify-content: center;
+  font-family: Rockwell;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 70px;
+}
+
+h1 {
+  margin: 3vh;
+}
+
+.choose-category {
+  background: #2774A8;
+  font-family: Segoe UI;
+  color: white;
+  border-radius: 20px;
+  font-size: 110px;
+  padding-left: 10px;
+  width: 30vw;
+  padding: 35px;
+}
+
+#noob-button, #medium-button, #pro-button {
+  margin: 10px;
+}
+
+#category-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 15vh;
+  margin-bottom: 25vh;
+}
+
+#footer {
+  background: black;
+  position: relative;
+  color: white;
+  font-family: Segoe UI;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#footheader {
+  font-size: 40px;
+  margin: 0px;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=style.css.map */

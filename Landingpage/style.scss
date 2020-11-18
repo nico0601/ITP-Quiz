@@ -1,0 +1,63 @@
+$primary-background: #99D6FF;
+$button-background: #2774A8;
+$headline-font: Rockwell;
+$button-font: Segoe UI;
+$footer-background: black;
+
+
+
+body {
+  background: $primary-background;
+  width: 100%;
+  overflow-x: hidden;
+}
+#header{
+  display: flex;
+  justify-content: center;
+  font-family: $headline-font;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 70px;
+}
+
+h1 {
+  margin:3vh;
+}
+
+.choose-category {
+  background: $button-background;
+  font-family: $button-font;
+  color: white;
+  border-radius: 20px;
+  font-size: 110px;
+  padding-left:10px;
+  width: 30vw;
+  padding: 35px;
+}
+
+#noob-button, #medium-button, #pro-button {
+  margin: 10px;
+}
+
+#category-buttons{
+  display: flex;
+  justify-content: center;
+  margin-top: 15vh;
+  margin-bottom: 25vh;
+}
+
+#footer{
+  background: $footer-background;
+  position: relative;
+  color:white;
+  font-family: $button-font;
+  display:flex;
+  justify-content: center;
+  width:100%
+}
+
+#footheader{
+  font-size: 40px;
+  margin: 0px;
+  font-weight: bold;
+}
