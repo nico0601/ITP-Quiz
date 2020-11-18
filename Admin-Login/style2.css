@@ -1,0 +1,72 @@
+body {
+    background-color: #99D6FF;
+    display: flex;
+    justify-content: center;
+}
+
+
+section {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.frage {
+    background-color: #2774A8;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.ue-frage {
+    font-size: 50px;
+    color: white;
+    margin: 0;
+    min-width: 55vw;
+    width: min-content;
+}
+
+.bearbeiten-loeschen {
+    display: flex;
+    justify-content: flex-end;
+}
+
+img {
+    border-radius: 10px;
+    background-color: #0C3C5C;
+    padding: 5px;
+    width: 44px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#button-hinzufuegen-weiter {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+button {
+    background-color: #2774A8;
+    color: white;
+    padding: 20px 30px;
+    display: inline-block;
+    border: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    outline: none;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 40px;
+    cursor: pointer;
+    width: min-content;
+    transition: 0.4s;
+    margin-left: 20px;
+    align-self: self-end;
+}
+button:hover {
+    transform: scale(1.1);
+    transition: 0.4s;
+}

@@ -1,0 +1,54 @@
+body {
+    background-color: #99D6FF;
+    display: flex;
+    justify-content: center;
+}
+
+
+section {
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15vh;
+}
+
+
+#ueberschrift, input[type=password], #button-weiter {
+    background-color: #2774A8;
+    font-size: 30px;
+    color: white;
+    padding: 20px 30px;
+    display: inline-block;
+    border: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    outline: none;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#ueberschrift {
+    font-size: 55px;
+}
+
+input[type=password] {
+    width: min-content;
+}
+input[type=password]::placeholder {
+    color: darkgray;
+}
+input[type=password]:focus {
+    background-color: #005fa5;
+}
+
+
+#button-weiter {
+    font-size: 40px;
+    cursor: pointer;
+    width: min-content;
+    transition: 0.4s;
+}
+#button-weiter:hover {
+    transform: scale(1.1);
+    transition: 0.4s;
+}
