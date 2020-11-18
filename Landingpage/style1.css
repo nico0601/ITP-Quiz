@@ -8,5 +8,23 @@
     font-family: Rockwell;
     font-weight: bold;
     font-style: italic;
-    font-size: 156px;
+    font-size: 70px;
+}
+
+h1 {
+    margin:3vh;
+}
+
+.choose-category {
+    background: #2774A8;
+    font-family: "Segoe UI";
+    color: white;
+    border-radius: 20px;
+    font-size: 50px;
+    padding-left:10px;
+    width: 30vh;
+}
+
+#noob-button, #medium-button, #pro-button{
+    margin:10px;
 }
