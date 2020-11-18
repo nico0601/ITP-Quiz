@@ -1,0 +1,12 @@
+* {
+    background: #99D6FF;
+}
+
+#header{
+    display: flex;
+    justify-content: center;
+    font-family: Rockwell;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 156px;
+}
