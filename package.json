@@ -19,5 +19,6 @@
   "homepage": "https://github.com/nico0601/ITP-Quiz#readme",
   "dependencies": {
     "node-sass": "^5.0.0"
-  }
+  },
+  "devDependencies": {}
 }

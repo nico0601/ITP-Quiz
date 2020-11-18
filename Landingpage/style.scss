@@ -10,14 +10,20 @@ body {
   background: $primary-background;
   width: 100%;
   overflow-x: hidden;
+  margin:0;
 }
+
+*{
+  margin:0;
+}
+
 #header{
   display: flex;
   justify-content: center;
   font-family: $headline-font;
   font-weight: bold;
   font-style: italic;
-  font-size: 70px;
+  font-size: 8.5vh;
 }
 
 h1 {
@@ -28,15 +34,26 @@ h1 {
   background: $button-background;
   font-family: $button-font;
   color: white;
-  border-radius: 20px;
-  font-size: 110px;
-  padding-left:10px;
+  border-radius: 1vw;
+  font-size: 10vh;
+  padding: 1.5vw;
+  padding-left: 0.5vw;
   width: 30vw;
-  padding: 35px;
+  outline:none;
+  border: none;
+  transition:0.3s;
 }
 
+.choose-category:hover {
+  transform: scale(1.02);
+  transition: 0.3s;
+  background: #0C3C5C;
+  cursor:pointer;
+}
+
+
 #noob-button, #medium-button, #pro-button {
-  margin: 10px;
+  margin: 0.5vw;
 }
 
 #category-buttons{
@@ -51,13 +68,58 @@ h1 {
   position: relative;
   color:white;
   font-family: $button-font;
-  display:flex;
-  justify-content: center;
-  width:100%
+
+  width:100%;
 }
 
 #footheader{
-  font-size: 40px;
-  margin: 0px;
+  display:flex;
+  justify-content: center;
+  font-size: 5.5vh;
+  margin: 0vh;
   font-weight: bold;
 }
+
+.contact-information{
+  margin-left: 8vw;
+}
+
+.underinf{
+  margin-left: 3.5vw;
+  margin-top: 1.3vw;
+  font-style: italic;
+}
+
+.footerminiheaders{
+  font-size: 4vh;
+  font-weight: bold;
+}
+
+#responsible-contact-details{
+  margin-top: 1.95vw;
+}
+
+#allfootercontent{
+  padding-bottom: 5vh;
+}
+
+#adminlink{
+  height: 5vh;
+  background: white;
+  display:flex;
+  justify-content: flex-end;
+}
+
+#adminlinkbutton{
+  background:none;
+  outline:none;
+  border: none;
+  border-left: black 1px solid;
+  transition:0.3s;
+}
+
+#adminlinkbutton:hover{
+  cursor:pointer;
+  transform: scale(1.1);
+}
+
