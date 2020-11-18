@@ -1,10 +1,25 @@
-@charset "UTF-8";
+$body-background-color: #99D6FF;
+$background-color2: #2774A8;
+$background-color3: #0C3C5C;
+
+$font: "Segoe UI";
+$basic-font-color: white;
+
+$button-hover-scale: 1.1;
+$button-transition: 0.3s;
+
+$primary-border-radius: 20px;
+$secondary-border-radius: 10px;
+
+
+
 body {
-  background-color: #99D6FF;
+  background-color: $body-background-color;
   display: flex;
   justify-content: center;
-  font-family: "Segoe UI";
+  font-family: $font;
 }
+
 
 /* Bereich um alles */
 section {
@@ -13,20 +28,21 @@ section {
   flex-direction: column;
 }
 
+
 /* Bereich um die Frage und die Bearbeiten- und Löschen-Buttons */
 .frage {
-  background-color: #2774A8;
+  background-color: $background-color2;
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-radius: 20px;
+  border-radius: $primary-border-radius;
   padding: 10px;
 }
 
 /* Die Frage selbst */
 .ue-frage {
   font-size: 50px;
-  color: white;
+  color: $basic-font-color;
   margin: 0;
   min-width: 55vw;
   width: min-content;
@@ -34,35 +50,34 @@ section {
 
 /* Der Bearbeiten- bzw. Löschen-Button */
 img {
-  border-radius: 10px;
-  background-color: #0C3C5C;
+  border-radius: $secondary-border-radius;
+  background-color: $background-color3;
   padding: 5px;
   width: 44px;
   margin-left: 5px;
   margin-right: 5px;
-  transition: 0.3s;
+  transition: $button-transition;
 }
-
 /* Der Bearbeiten- bzw. Löschen-Button im Hover-Modus */
 img:hover {
-  transform: scale(1.1);
-  transition: 0.3s;
+  transform: scale($button-hover-scale);
+  transition: $button-transition;
 }
+
 
 /* Bereich um die Hinzufügen- und Weiter-Buttons */
 #button-hinzufuegen-weiter {
   display: flex;
   justify-content: flex-end;
 }
-
 /* Der Hinzufügen- und Weiter-Button selbst */
 .button {
-  background-color: #2774A8;
-  color: white;
+  background-color: $background-color2;
+  color: $basic-font-color;
   padding: 20px 30px;
   display: inline-block;
   border: none;
-  border-radius: 20px;
+  border-radius: $primary-border-radius;
   box-sizing: border-box;
   outline: none;
   margin-bottom: 20px;
@@ -70,15 +85,12 @@ img:hover {
   font-size: 40px;
   cursor: pointer;
   width: min-content;
-  transition: 0.3s;
+  transition: $button-transition;
   margin-left: 20px;
   align-self: self-end;
 }
-
 /* Der Hinzufügen- und Weiter-Button im Hover-Modus */
 .button:hover {
-  transform: scale(1.1);
-  transition: 0.3s;
+  transform: scale($button-hover-scale);
+  transition: $button-transition;
 }
-
-/*# sourceMappingURL=style2.css.map */

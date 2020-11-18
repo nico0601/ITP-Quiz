@@ -1,10 +1,24 @@
-@charset "UTF-8";
+$body-background-color: #99D6FF;
+$background-color2: #2774A8;
+
+$font: "Segoe UI";
+$basic-font-color: white;
+
+$input-focused-color: #005fa5;
+$placeholder-color: darkgray;
+
+$button-hover-scale: 1.1;
+$button-transition: 0.3s;
+
+
+
 body {
-  background-color: #99D6FF;
+  background-color: $body-background-color;
   display: flex;
   justify-content: center;
-  font-family: "Segoe UI";
+  font-family: $font;
 }
+
 
 /* Bereich um alles */
 section {
@@ -14,11 +28,12 @@ section {
   margin-top: 15vh;
 }
 
+
 /* Grundformat für Überschrift, Passworteingabe und Weiter-Button */
 #ueberschrift, input[type=password], #button-weiter {
   background-color: #2774A8;
   font-size: 30px;
-  color: white;
+  color: $basic-font-color;
   padding: 20px 30px;
   display: inline-block;
   border: none;
@@ -38,15 +53,13 @@ section {
 input[type=password] {
   width: min-content;
 }
-
 /* Temporärer Text */
 input[type=password]::placeholder {
-  color: darkgray;
+  color: $placeholder-color;
 }
-
 /* Layout wenn angeklickt */
 input[type=password]:focus {
-  background-color: #005fa5;
+  background-color: $input-focused-color;
 }
 
 /* Der Weiter-Button */
@@ -54,13 +67,10 @@ input[type=password]:focus {
   font-size: 40px;
   cursor: pointer;
   width: min-content;
-  transition: 0.3s;
+  transition: $button-transition;
 }
-
 /* Hover-Modus */
 #button-weiter:hover {
-  transform: scale(1.1);
-  transition: 0.3s;
+  transform: scale($button-hover-scale);
+  transition: $button-transition;
 }
-
-/*# sourceMappingURL=style1.css.map */
