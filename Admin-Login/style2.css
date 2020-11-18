@@ -2,9 +2,11 @@ body {
     background-color: #99D6FF;
     display: flex;
     justify-content: center;
+    font-family: "Segoe UI";
 }
 
 
+/* Bereich um alles */
 section {
     margin-top: 10vh;
     display: flex;
@@ -12,14 +14,17 @@ section {
 }
 
 
+/* Bereich um die Frage und die Bearbeiten- und Löschen-Buttons */
 .frage {
     background-color: #2774A8;
     display: flex;
     flex-direction: row;
+    align-items: center;
     border-radius: 20px;
     padding: 10px;
 }
 
+/* Die Frage selbst */
 .ue-frage {
     font-size: 50px;
     color: white;
@@ -28,11 +33,7 @@ section {
     width: min-content;
 }
 
-.bearbeiten-loeschen {
-    display: flex;
-    justify-content: flex-end;
-}
-
+/* Das Bearbeiten- bzw. Löschen-Bild */
 img {
     border-radius: 10px;
     background-color: #0C3C5C;
@@ -41,13 +42,13 @@ img {
     margin-left: 5px;
     margin-right: 5px;
 }
-
+/* Bereich um die Hinzufügen- und Weiter-Buttons */
 #button-hinzufuegen-weiter {
     display: flex;
     justify-content: flex-end;
 }
 
-
+/* Der Hinzufügen- und Weiter-Button selbst */
 button {
     background-color: #2774A8;
     color: white;
@@ -66,6 +67,7 @@ button {
     margin-left: 20px;
     align-self: self-end;
 }
+/* Der Hinzufügen- und Weiter-Button im Hover-Modus */
 button:hover {
     transform: scale(1.1);
     transition: 0.4s;
