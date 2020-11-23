@@ -15,7 +15,7 @@ body {
   font-family: Rockwell;
   font-weight: bold;
   font-style: italic;
-  font-size: 8.5vh;
+  font-size: 8.5vw;
 }
 
 h1 {
@@ -34,6 +34,7 @@ h1 {
   outline: none;
   border: none;
   transition: 0.3s;
+  height: 25vh;
 }
 
 .choose-category:hover {
@@ -48,8 +49,7 @@ h1 {
 }
 
 #category-buttons {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   margin-top: 15vh;
   margin-bottom: 25vh;
 }
@@ -100,17 +100,154 @@ h1 {
   justify-content: flex-end;
 }
 
-#adminlinkbutton {
-  background: none;
+#admin-div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#admin-button {
+  margin-right: 5vw;
+  padding: 3vh;
+  background: white;
+  border-radius: 1vw;
+  font-style: Rockwell;
   outline: none;
+  font-family: Segoe UI;
+  font-weight: bold;
   border: none;
-  border-left: black 1px solid;
   transition: 0.3s;
 }
 
-#adminlinkbutton:hover {
+#admin-button:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+
+#contact-responsible {
+  display: flex;
+  flex-direction: row;
+}
+
+#onlycontact {
+  display: flex;
+  flex-direction: column;
+}
+
+#textline {
+  display: flex;
+  justify-content: center;
+  width: 50vw;
+  margin-top: 10vh;
+  font-size: 6vh;
+  margin-left: 8vw;
+  font-family: Rockwell;
+}
+
+@media screen and (max-width: 960px) {
+  #category-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .choose-category {
+    font-size: 8vh;
+    height: 18vh;
+  }
+}
+@media screen and (max-width: 920px) {
+  #category-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .choose-category {
+    font-size: 6vh;
+    height: 15vh;
+  }
+
+  #textline {
+    font-size: 4.8vh;
+  }
+}
+@media screen and (max-width: 720px) {
+  #category-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .choose-category {
+    font-size: 6vh;
+    height: 15vh;
+    width: 40vw;
+  }
+
+  #textline {
+    font-size: 3.7vh;
+  }
+}
+@media screen and (max-width: 600px) {
+  #category-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .choose-category {
+    font-size: 6vh;
+    height: 15vh;
+    width: 40vw;
+  }
+
+  #footheader {
+    font-size: 4.5vh;
+  }
+
+  #contact-responsible {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #allfootercontent {
+    text-align: center;
+  }
+
+  .underinf {
+    margin: 0;
+  }
+
+  .contact-information {
+    margin: 0;
+  }
+
+  #admin-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+  }
+
+  #textline {
+    margin-left: 0;
+    margin-bottom: 5vh;
+    margin-top: 11vh;
+    white-space: nowrap;
+    font-size: 4vh;
+  }
+
+  #admin-button {
+    margin-right: 0;
+  }
+
+  .footerminiheaders {
+    margin-top: 4vh;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

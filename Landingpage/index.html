@@ -7,49 +7,56 @@
 </head>
 <body>
 <header id="header">
-    <h1>Fast. Furious. Quiz!</h1>
+    <p>Fast. Furious. Quiz!</p>
 </header>
 
-
 <div id="category-buttons">
-<input class="choose-category" type="submit" id="noob-button" value="Noob">
-<input class="choose-category" type="submit" id="medium-button" value="Medium">
-<input class="choose-category" type="submit" id="pro-button" value="Pro">
+    <input class="choose-category" type="submit" id="noob-button" value="Noob">
+    <input class="choose-category" type="submit" id="medium-button" value="Medium">
+    <input class="choose-category" type="submit" id="pro-button" value="Pro">
 </div>
 
 
 <footer id="footer">
     <div id="allfootercontent">
-    <p id="footheader">IMPRESSUM</p>
+        <p id="footheader" onmouseover="document.getElementById('footer').scrollIntoView({behavior:'smooth'});">
+            IMPRESSUM</p>
 
-    <div class="contact-information" id="contact">
-        <p class="footerminiheaders">
-            Kontakt
-        </p>
 
-        <p class="underinf">
-            fastfurious.quiz@gmail.com
-            <br>
-            +43 699 12345678
-        </p>
-    </div>
+        <div id="contact-responsible">
+            <div id="onlycontact">
+                <div class="contact-information" id="contact">
+                    <p class="footerminiheaders">
+                        Kontakt
+                    </p>
 
-    <div class="contact-information" id="responsible-contact-details">
-        <p class="footerminiheaders">
-            Verantwortlich für den Inhalt
-        </p>
+                    <p class="underinf">
+                        fastfurious.quiz@gmail.com
+                        <br>
+                        +43 699 12345678
+                    </p>
+                </div>
+                <div class="contact-information" id="responsible-contact-details">
+                    <p class="footerminiheaders">
+                        Verantwortlich für den Inhalt
+                    </p>
 
-        <p class="underinf">
-            nico.naumann@htl.rennweg.at
-            <br>
-            +43 664 75060542
-        </p>
+                    <p class="underinf">
+                        nico.naumann@htl.rennweg.at
+                        <br>
+                        +43 664 75060542
+                    </p>
+                </div>
+            </div>
+            <div id="textline">
+                <p>Fast. Furious. Quiz</p>
+            </div>
+        </div>
+
+        <div id="admin-div">
+        <input type="submit" id="admin-button" value="Admin-Bereich">
     </div>
     </div>
 </footer>
-
-<!--<div id="adminlink">-->
-<!--    <input type="submit" id="adminlinkbutton" value="Admin-Bereich">-->
-<!--</div>-->
 </body>
 </html>
