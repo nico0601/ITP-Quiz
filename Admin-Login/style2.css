@@ -81,4 +81,24 @@ img:hover {
   transition: 0.3s;
 }
 
+@media (max-width: 991px) {
+  body {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  section {
+    width: 95vw;
+  }
+
+  #ueberschrift, input[type=password], #passwort, #button-weiter {
+    font-size: 20px;
+  }
+
+  input[type=password] {
+    min-width: 300px;
+  }
+}
+
 /*# sourceMappingURL=style2.css.map */

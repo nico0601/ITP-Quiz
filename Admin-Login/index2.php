@@ -18,6 +18,19 @@
         <input type="submit" class="button" id="button-hinzufuegen" value="Hinzufügen">
         <input type="submit" class="button" id="button-weiter" value="Weiter">
     </form>
+
+    <?php
+
+    include("../getPDO.php");
+
+    $sql = getPDO()->prepare("SELECT frage FROM frage");
+    $sql->execute();
+
+    foreach ($sql->fetchAll() as $item) {
+        echo $item[0]."<br>";
+    }
+
+    ?>
 </section>
 
 </body>

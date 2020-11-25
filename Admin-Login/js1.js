@@ -9,9 +9,9 @@ button.addEventListener("click", button_disable, false)
 
 function button_disable() {
     if (eingabe.value === passwort && zaehler <= 3) {
-        window.location = "index2.html"
+        window.location = "index2.php"
     } else if (zaehler === 3) {
-        window.location = "landingpage.html"
+        window.location = "../Landingpage/index.html"
     } else {
         zaehler++
         passwortError.style.display = "inherit"
