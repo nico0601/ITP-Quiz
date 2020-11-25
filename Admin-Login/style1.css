@@ -8,16 +8,16 @@ body {
 
 /* Bereich um alles */
 section {
-  width: 55vw;
+  width: 65vw;
   display: flex;
   flex-direction: column;
   margin-top: 15vh;
 }
 
 /* Grundformat für Überschrift, Passworteingabe und Weiter-Button */
-#ueberschrift, input[type=password], #button-weiter {
+#ueberschrift, input[type=password], #passwort, #button-weiter {
   background-color: #2774A8;
-  font-size: 30px;
+  font-size: 1.5vw;
   color: white;
   padding: 20px 30px;
   display: inline-block;
@@ -31,12 +31,24 @@ section {
 
 /* Die Überschrift */
 #ueberschrift {
-  font-size: 55px;
+  font-size: 3.2vw;
+  width: 100%;
+}
+
+/* Text bei falscher Passworteingabe */
+#passwort {
+  color: red;
+  width: max-content;
+  background-color: #0C3C5C;
+  padding: 10px 15px;
+  margin-bottom: 0;
+  font-size: 1.2vw;
 }
 
 /* Die Passworteingabe */
 input[type=password] {
-  width: min-content;
+  width: 40vw;
+  margin-top: 10px;
 }
 
 /* Temporärer Text */
@@ -51,7 +63,7 @@ input[type=password]:focus {
 
 /* Der Weiter-Button */
 #button-weiter {
-  font-size: 40px;
+  font-size: 2.8vw;
   cursor: pointer;
   width: min-content;
   transition: 0.3s;

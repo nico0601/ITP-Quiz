@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width">
     <title>Admin-Login</title>
     <link rel="stylesheet" type="text/css" href="./style1.css">
+    <script language ="javascript" src="js1.js" defer> </script>
 </head>
 <body>
 
@@ -12,9 +13,11 @@
         <h1 id="ueberschrift">Bitte Admin-Passwort eingeben:</h1>
     </header>
 
-    <input type="password" placeholder="Ihr Passwort..." autofocus>
+    <p id="passwort" style="display: none"></p>
 
-    <button type="submit" id="button-weiter" onclick=" window.open('index2.html')">Weiter</button>
+    <input id="passwortEingabe" type="password" placeholder="Ihr Passwort..." autofocus>
+
+    <button type="submit" id="button-weiter">Weiter</button>
 </section>
 
 </body>
