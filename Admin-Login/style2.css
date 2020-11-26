@@ -7,10 +7,12 @@ body {
 }
 
 /* Bereich um alles */
-section {
+#fragen {
   margin-top: 10vh;
   display: flex;
   flex-direction: column;
+  height: 60vh;
+  overflow-y: scroll;
 }
 
 /* Bereich um die Frage und die Bearbeiten- und Löschen-Buttons */
@@ -21,19 +23,26 @@ section {
   align-items: center;
   border-radius: 20px;
   padding: 10px;
+  margin: 20px 0;
 }
 
 /* Die Frage selbst */
 .ue-frage {
-  font-size: 50px;
+  font-size: 1.8vw;
   color: white;
   margin: 0;
   min-width: 55vw;
   width: min-content;
 }
 
-/* Der Bearbeiten- bzw. Löschen-Button */
-img {
+/* Bereich um Bearbeiten- und Löschen-Button */
+#button-bearbeiten-loeschen {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Der Bearbeiten- und Löschen-Button */
+#button-bearbeiten, #button-loeschen {
   border-radius: 10px;
   background-color: #0C3C5C;
   padding: 5px;
@@ -43,19 +52,18 @@ img {
   transition: 0.3s;
 }
 
-/* Der Bearbeiten- bzw. Löschen-Button im Hover-Modus */
-img:hover {
+#button-bearbeiten:hover, #button-loeschen:hover {
   transform: scale(1.1);
   transition: 0.3s;
 }
 
-/* Bereich um die Hinzufügen- und Weiter-Buttons */
-#button-hinzufuegen-weiter {
+/* Bereich um die Hinzufügen- und Zurück-Buttons */
+#button-hinzufuegen-zurueck {
   display: flex;
   justify-content: flex-end;
 }
 
-/* Der Hinzufügen- und Weiter-Button selbst */
+/* Der Hinzufügen- und Zurück-Button selbst */
 .button {
   background-color: #2774A8;
   color: white;
@@ -66,8 +74,8 @@ img:hover {
   box-sizing: border-box;
   outline: none;
   margin-bottom: 20px;
-  margin-top: 20px;
-  font-size: 40px;
+  margin-top: 80px;
+  font-size: 1.8vw;
   cursor: pointer;
   width: min-content;
   transition: 0.3s;
@@ -75,29 +83,56 @@ img:hover {
   align-self: self-end;
 }
 
-/* Der Hinzufügen- und Weiter-Button im Hover-Modus */
+/* Der Hinzufügen- und Zurück-Button im Hover-Modus */
 .button:hover {
   transform: scale(1.1);
   transition: 0.3s;
 }
 
+/* Anpassung für Mobile-Version */
 @media (max-width: 991px) {
-  body {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-  }
-
-  section {
+  .frage {
     width: 95vw;
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #99D6FF;
   }
 
-  #ueberschrift, input[type=password], #passwort, #button-weiter {
+  .ue-frage {
+    background-color: #2774A8;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 20px 0;
     font-size: 20px;
   }
 
-  input[type=password] {
-    min-width: 300px;
+  #button-bearbeiten-loeschen {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #button-bearbeiten, #button-loeschen {
+    border-radius: 10px;
+    background-color: #0C3C5C;
+    padding: 5px;
+    width: 44px;
+    margin-left: 20px;
+    margin-right: 20px;
+    transition: 0.3s;
+  }
+
+  #button-hinzufuegen-zurueck {
+    display: flex;
+    justify-content: center;
+  }
+
+  .button {
+    font-size: 15px;
+    width: 150px;
+    margin: 50px 10px;
   }
 }
 
