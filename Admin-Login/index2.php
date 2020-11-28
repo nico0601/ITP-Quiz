@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width">
     <title>Adminpage</title>
     <link rel="stylesheet" type="text/css" href="./style2.css">
+    <link rel="icon" href="../Logos/Schwarzer%20Hintergrund/Logo.png">
 </head>
 <body>
 
