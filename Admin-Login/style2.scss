@@ -1,6 +1,7 @@
 $body-background-color: #99D6FF;
 $background-color2: #2774A8;
 $background-color3: #0C3C5C;
+$background-color4: #002f43;
 
 $font: "Segoe UI";
 $basic-font-color: white;
@@ -10,6 +11,7 @@ $button-transition: 0.3s;
 
 $primary-border-radius: 20px;
 $secondary-border-radius: 10px;
+$scrollbar-border-radius: 10px;
 
 
 
@@ -19,6 +21,28 @@ body {
   justify-content: center;
   font-family: $font;
 }
+
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: auto;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: $scrollbar-border-radius;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $background-color3;
+  border-radius: $scrollbar-border-radius;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $background-color4;
+}
+
 
 
 /* Bereich um alles */
@@ -39,7 +63,7 @@ body {
   align-items: center;
   border-radius: $primary-border-radius;
   padding: 10px;
-  margin: 20px 0;
+  margin: 20px 5px;
 }
 
 /* Die Frage selbst */
@@ -47,8 +71,7 @@ body {
   font-size: 1.8vw;
   color: $basic-font-color;
   margin: 0;
-  min-width: 55vw;
-  width: min-content;
+  width: 55vw;
 }
 
 /* Bereich um Bearbeiten- und Löschen-Button */
@@ -106,8 +129,8 @@ body {
 /* Anpassung für Mobile-Version */
 @media (max-width: 991px) {
   .frage {
-    width: 95vw;
-    margin: 5px 0;
+    width: 80vw;
+    margin: 5px 5px;
     display: flex;
     flex-direction: column;
     background-color: $body-background-color;
@@ -116,8 +139,10 @@ body {
     background-color: $background-color2;
     border-radius: $primary-border-radius;
     padding: 10px;
-    margin: 20px 0;
+    margin: 20px 0px;
     font-size: 20px;
+    width: inherit;
+    text-align: center;
   }
 
   #button-bearbeiten-loeschen {

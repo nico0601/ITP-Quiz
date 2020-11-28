@@ -6,6 +6,25 @@ body {
   font-family: "Segoe UI";
 }
 
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: auto;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0C3C5C;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #002f43;
+}
+
 /* Bereich um alles */
 #fragen {
   margin-top: 10vh;
@@ -23,7 +42,7 @@ body {
   align-items: center;
   border-radius: 20px;
   padding: 10px;
-  margin: 20px 0;
+  margin: 20px 5px;
 }
 
 /* Die Frage selbst */
@@ -31,8 +50,7 @@ body {
   font-size: 1.8vw;
   color: white;
   margin: 0;
-  min-width: 55vw;
-  width: min-content;
+  width: 55vw;
 }
 
 /* Bereich um Bearbeiten- und Löschen-Button */
@@ -92,8 +110,8 @@ body {
 /* Anpassung für Mobile-Version */
 @media (max-width: 991px) {
   .frage {
-    width: 95vw;
-    margin: 5px 0;
+    width: 80vw;
+    margin: 5px 5px;
     display: flex;
     flex-direction: column;
     background-color: #99D6FF;
@@ -103,8 +121,10 @@ body {
     background-color: #2774A8;
     border-radius: 20px;
     padding: 10px;
-    margin: 20px 0;
+    margin: 20px 0px;
     font-size: 20px;
+    width: inherit;
+    text-align: center;
   }
 
   #button-bearbeiten-loeschen {
