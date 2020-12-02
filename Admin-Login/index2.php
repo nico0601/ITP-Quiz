@@ -11,6 +11,7 @@
 <section>
     <?php
     include("../getPDO.php");
+    include("Fragen.php");
 
     session_start();
 
@@ -18,25 +19,8 @@
     $sql->execute();
     $fragen = $sql->fetchAll();
 
-    echo "<div id='fragen'>";
-
-    foreach ($fragen as $frage) {
-        $frageBereich = <<<ENDE
-            <div class='frage'>
-                <p class='ue-frage'>$frage[1]</p>
-                <div class="button-bearbeiten-loeschen">
-                    <form method='get' action='http://www.google.at'>
-                        <input class='button-bearbeiten' type='image' src='../Bilder/Bearbeiten.png'>
-                    </form>
-                    <form method="get" action="index2.php">
-                        <input class='button-loeschen' value="$frage[0]" name="button-loeschen$frage[0]" alt="submit" type='submit'>
-                    </form>
-                </div>
-            </div>
-ENDE;
-
-        echo $frageBereich;
-    }
+    $fragenHTML = new Fragen($fragen);
+    $fragenHTML->getHTML();
 
     $lastID = 0;
     foreach ($fragen as $item) {
@@ -64,7 +48,7 @@ ENDE;
         <form method="get" action="http://www.google.at">
             <input type="submit" class="button" id="button-hinzufuegen" value="Hinzufügen">
         </form>
-        <form method="get" action="../Landingpage/index.html">
+        <form method="get" action="../Landingpage/index.php">
             <input type="submit" class="button" id="button-zurueck" value="Zurück">
         </form>
     </div>
