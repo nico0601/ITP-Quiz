@@ -11,7 +11,7 @@ function button_disable() {
     if (eingabe.value === passwort && zaehler <= 3) {
         window.location = "index2.php"
     } else if (zaehler === 3) {
-        window.location = "../Landingpage/index.html"
+        window.location = "../Landingpage/index.php"
     } else {
         zaehler++
         passwortError.style.display = "inherit"

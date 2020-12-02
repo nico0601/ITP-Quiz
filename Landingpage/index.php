@@ -10,6 +10,17 @@
     <p>Fast. Furious. Quiz!</p>
 </header>
 
+<?php
+//include("../getPDO.php");
+//
+//$sql=getPDO()->prepare("SELECT frage FROM frage");
+//$sql->execute();
+//
+//foreach ($sql -> fetchAll() as $item){
+//    echo $item[0];
+//}
+?>
+
 <div id="category-buttons">
     <input class="choose-category" type="submit" id="noob-button" value="Noob">
     <input class="choose-category" type="submit" id="medium-button" value="Medium">
@@ -54,7 +65,7 @@
         </div>
 
         <div id="admin-div">
-            <form method="get" action="../Admin-Login/index.html">
+            <form method="get" action="../Admin-Login/index.php">
                 <input type="submit" id="admin-button" value="Admin-Bereich">
             </form>
         </div>
