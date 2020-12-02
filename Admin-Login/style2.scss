@@ -1,6 +1,7 @@
 $body-background-color: #99D6FF;
 $background-color2: #2774A8;
 $background-color3: #0C3C5C;
+$background-color4: #002f43;
 
 $font: "Segoe UI";
 $basic-font-color: white;
@@ -10,6 +11,7 @@ $button-transition: 0.3s;
 
 $primary-border-radius: 20px;
 $secondary-border-radius: 10px;
+$scrollbar-border-radius: 10px;
 
 
 
@@ -21,11 +23,35 @@ body {
 }
 
 
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: auto;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: $scrollbar-border-radius;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $background-color3;
+  border-radius: $scrollbar-border-radius;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $background-color4;
+}
+
+
+
 /* Bereich um alles */
-section {
+#fragen {
   margin-top: 10vh;
   display: flex;
   flex-direction: column;
+  height: 60vh;
+  overflow-y: scroll;
 }
 
 
@@ -37,19 +63,24 @@ section {
   align-items: center;
   border-radius: $primary-border-radius;
   padding: 10px;
+  margin: 20px 5px;
 }
 
 /* Die Frage selbst */
 .ue-frage {
-  font-size: 50px;
+  font-size: 1.8vw;
   color: $basic-font-color;
   margin: 0;
-  min-width: 55vw;
-  width: min-content;
+  width: 55vw;
 }
 
-/* Der Bearbeiten- bzw. Löschen-Button */
-img {
+/* Bereich um Bearbeiten- und Löschen-Button */
+#button-bearbeiten-loeschen {
+  display: flex;
+  flex-direction: row;
+}
+/* Der Bearbeiten- und Löschen-Button */
+#button-bearbeiten, #button-loeschen {
   border-radius: $secondary-border-radius;
   background-color: $background-color3;
   padding: 5px;
@@ -58,19 +89,18 @@ img {
   margin-right: 5px;
   transition: $button-transition;
 }
-/* Der Bearbeiten- bzw. Löschen-Button im Hover-Modus */
-img:hover {
+#button-bearbeiten:hover, #button-loeschen:hover {
   transform: scale($button-hover-scale);
   transition: $button-transition;
 }
 
 
-/* Bereich um die Hinzufügen- und Weiter-Buttons */
-#button-hinzufuegen-weiter {
+/* Bereich um die Hinzufügen- und Zurück-Buttons */
+#button-hinzufuegen-zurueck {
   display: flex;
   justify-content: flex-end;
 }
-/* Der Hinzufügen- und Weiter-Button selbst */
+/* Der Hinzufügen- und Zurück-Button selbst */
 .button {
   background-color: $background-color2;
   color: $basic-font-color;
@@ -81,34 +111,64 @@ img:hover {
   box-sizing: border-box;
   outline: none;
   margin-bottom: 20px;
-  margin-top: 20px;
-  font-size: 40px;
+  margin-top: 80px;
+  font-size: 1.8vw;
   cursor: pointer;
   width: min-content;
   transition: $button-transition;
   margin-left: 20px;
   align-self: self-end;
 }
-/* Der Hinzufügen- und Weiter-Button im Hover-Modus */
+/* Der Hinzufügen- und Zurück-Button im Hover-Modus */
 .button:hover {
   transform: scale($button-hover-scale);
   transition: $button-transition;
 }
 
 
+/* Anpassung für Mobile-Version */
 @media (max-width: 991px) {
-  body {
+  .frage {
+    width: 80vw;
+    margin: 5px 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: $body-background-color;
+  }
+  .ue-frage {
+    background-color: $background-color2;
+    border-radius: $primary-border-radius;
+    padding: 10px;
+    margin: 20px 0px;
+    font-size: 20px;
+    width: inherit;
+    text-align: center;
+  }
+
+  #button-bearbeiten-loeschen {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  #button-bearbeiten, #button-loeschen {
+    border-radius: $secondary-border-radius;
+    background-color: $background-color3;
+    padding: 5px;
+    width: 44px;
+    margin-left: 20px;
+    margin-right: 20px;
+    transition: $button-transition;
+  }
+
+
+  #button-hinzufuegen-zurueck {
     display: flex;
     justify-content: center;
-    padding: 0;
   }
-  section {
-    width: 95vw;
-  }
-  #ueberschrift, input[type=password], #passwort, #button-weiter {
-    font-size: 20px;
-  }
-  input[type=password] {
-    min-width: 300px;
+  .button {
+    font-size: 15px;
+    width: 150px;
+    margin: 50px 10px;
   }
 }
