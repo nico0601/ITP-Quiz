@@ -75,23 +75,38 @@ body {
 }
 
 /* Bereich um Bearbeiten- und Löschen-Button */
-#button-bearbeiten-loeschen {
+.button-bearbeiten-loeschen {
   display: flex;
   flex-direction: row;
 }
 /* Der Bearbeiten- und Löschen-Button */
-#button-bearbeiten, #button-loeschen {
+.button-bearbeiten, .button-loeschen {
   border-radius: $secondary-border-radius;
   background-color: $background-color3;
   padding: 5px;
   width: 44px;
+  height: 44px;
   margin-left: 5px;
   margin-right: 5px;
   transition: $button-transition;
 }
-#button-bearbeiten:hover, #button-loeschen:hover {
+.button-bearbeiten:hover, .button-loeschen:hover {
   transform: scale($button-hover-scale);
   transition: $button-transition;
+}
+.button-loeschen {
+  background: url("../Bilder/Loeschen.png");
+  background-color: $background-color3;
+  background-size: 44px 44px;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  cursor: pointer;
+  color: transparent;
+  padding: 5px;
+  width: 44px;
+  height: 44px;
+  border: none;
 }
 
 
@@ -139,7 +154,7 @@ body {
     background-color: $background-color2;
     border-radius: $primary-border-radius;
     padding: 10px;
-    margin: 20px 0px;
+    margin: 20px 0;
     font-size: 20px;
     width: inherit;
     text-align: center;

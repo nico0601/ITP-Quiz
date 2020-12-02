@@ -54,25 +54,41 @@ body {
 }
 
 /* Bereich um Bearbeiten- und Löschen-Button */
-#button-bearbeiten-loeschen {
+.button-bearbeiten-loeschen {
   display: flex;
   flex-direction: row;
 }
 
 /* Der Bearbeiten- und Löschen-Button */
-#button-bearbeiten, #button-loeschen {
+.button-bearbeiten, .button-loeschen {
   border-radius: 10px;
   background-color: #0C3C5C;
   padding: 5px;
   width: 44px;
+  height: 44px;
   margin-left: 5px;
   margin-right: 5px;
   transition: 0.3s;
 }
 
-#button-bearbeiten:hover, #button-loeschen:hover {
+.button-bearbeiten:hover, .button-loeschen:hover {
   transform: scale(1.1);
   transition: 0.3s;
+}
+
+.button-loeschen {
+  background: url("../Bilder/Loeschen.png");
+  background-color: #0C3C5C;
+  background-size: 44px 44px;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  cursor: pointer;
+  color: transparent;
+  padding: 5px;
+  width: 44px;
+  height: 44px;
+  border: none;
 }
 
 /* Bereich um die Hinzufügen- und Zurück-Buttons */
@@ -121,7 +137,7 @@ body {
     background-color: #2774A8;
     border-radius: 20px;
     padding: 10px;
-    margin: 20px 0px;
+    margin: 20px 0;
     font-size: 20px;
     width: inherit;
     text-align: center;

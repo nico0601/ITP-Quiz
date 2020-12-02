@@ -12,27 +12,48 @@
     <?php
     include("../getPDO.php");
 
-    $sql = getPDO()->prepare("SELECT frage FROM frage");
+    session_start();
+
+    $sql = getPDO()->prepare("SELECT * FROM frage");
     $sql->execute();
+    $fragen = $sql->fetchAll();
 
     echo "<div id='fragen'>";
 
-    foreach ($sql->fetchAll() as $frage) {
+    foreach ($fragen as $frage) {
         $frageBereich = <<<ENDE
             <div class='frage'>
-                <p class='ue-frage'>$frage[0]</p>
-                <div id="button-bearbeiten-loeschen">
+                <p class='ue-frage'>$frage[1]</p>
+                <div class="button-bearbeiten-loeschen">
                     <form method='get' action='http://www.google.at'>
-                        <input id='button-bearbeiten' type='image' src='../Bilder/Bearbeiten.png'>
+                        <input class='button-bearbeiten' type='image' src='../Bilder/Bearbeiten.png'>
                     </form>
-                    <form method='get' action='http://www.google.at'>
-                        <input id='button-loeschen' type='image' src='../Bilder/Loeschen.png'>
+                    <form method="get" action="index2.php">
+                        <input class='button-loeschen' value="$frage[0]" name="button-loeschen$frage[0]" alt="submit" type='submit'>
                     </form>
                 </div>
             </div>
 ENDE;
 
         echo $frageBereich;
+    }
+
+    $lastID = 0;
+    foreach ($fragen as $item) {
+        if ($lastID < $item[0]) {
+            $lastID = $item[0];
+        }
+    }
+
+    for ($i = 0; $i <= $lastID; $i++) {
+        if (isset($_GET['button-loeschen'.$i])) {
+            if ($_SESSION['alt'] != $_GET['button-loeschen'.$i]) {
+                $sql = getPDO()->prepare("DELETE FROM frage WHERE pk_frage_id = " . $i);
+                $sql->execute();
+                echo "<script language='javascript'>window.location.href = window.location.href</script>";
+            }
+            $_SESSION['alt'] = $_GET['button-loeschen' . $i];
+        }
     }
 
     echo "</div>";
