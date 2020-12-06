@@ -17,8 +17,6 @@
     include_once("Kategorien.php");
     include_once("Fragen.php");
 
-    session_start();
-
     $sql = getPDO()->prepare("SELECT * FROM frage");
     $sql->execute();
     $fragen = $sql->fetchAll();
@@ -35,7 +33,7 @@
             $kategorienObjekt = new Kategorien();
 
             $list = <<<ENDE
-            <select name="schwierigkeit">
+            <select name="schwierigkeit" required>
                 <option>Noob</option>
                 <option>Medium</option>
                 <option>Pro</option>
@@ -46,7 +44,7 @@ ENDE;
 
             $kategorienObjekt->getList();
             ?>
-            <input type="text" id="fragenName" name="frage" placeholder="Ihre Frage..." autofocus>
+            <input type="text" id="fragenName" name="frage" placeholder="Ihre Frage..." autofocus required>
             <div id="antworten">
                 <div id="antwort1feld">
                     <input type="text" id="antwort1" name="antwort1" placeholder="Antwort 1..." required>
