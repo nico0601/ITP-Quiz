@@ -13,7 +13,6 @@ $button-hover-scale: 1.1;
 $button-transition: 0.3s;
 
 
-
 body {
   background-color: $body-background-color;
   display: flex;
@@ -67,10 +66,12 @@ input[type=password] {
   width: 40vw;
   margin-top: 10px;
 }
+
 /* Temporärer Text */
 input[type=password]::placeholder {
   color: $placeholder-color;
 }
+
 /* Layout wenn angeklickt */
 input[type=password]:focus {
   background-color: $input-focused-color;
@@ -83,6 +84,7 @@ input[type=password]:focus {
   width: min-content;
   transition: $button-transition;
 }
+
 /* Hover-Modus */
 #button-weiter:hover {
   transform: scale($button-hover-scale);

@@ -1,7 +1,7 @@
 let eingabe = document.getElementById("passwortEingabe")
 let button = document.getElementById("button-weiter")
 let passwortError = document.getElementById("passwort")
-let passwort = "admin"
+let passwort = "polnischeKuh"
 
 let zaehler = 1
 

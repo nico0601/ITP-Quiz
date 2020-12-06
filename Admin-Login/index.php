@@ -7,7 +7,7 @@
     <title>Admin-Login</title>
     <link rel="stylesheet" type="text/css" href="./style1.css">
     <link rel="icon" href="../Logos/Schwarzer%20Hintergrund/Logo.png">
-    <script language ="javascript" src="js1.js" defer> </script>
+    <script language="javascript" src="js1.js" defer></script>
 </head>
 <body>
 

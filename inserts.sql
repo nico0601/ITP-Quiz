@@ -97,5 +97,12 @@ VALUES (1, 'Mit einem', false, 1),
 
 
 
-
-
+# SELECT max(pk_frage_id) from frage;
+#
+# Select * from frage
+# INNER JOIN antwort a on frage.pk_frage_id = a.fk_pk_frage_id
+# WHERE pk_frage_id = 30;
+#
+# SELECT * FROM frage;
+#
+# SELECT * FROM schwierigkeitsgrad;

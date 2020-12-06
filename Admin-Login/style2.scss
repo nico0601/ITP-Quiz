@@ -14,14 +14,12 @@ $secondary-border-radius: 10px;
 $scrollbar-border-radius: 10px;
 
 
-
 body {
   background-color: $body-background-color;
   display: flex;
   justify-content: center;
   font-family: $font;
 }
-
 
 
 /* Scrollbar */
@@ -44,14 +42,13 @@ body {
 }
 
 
-
 /* Bereich um alles */
 #fragen {
   margin-top: 10vh;
   display: flex;
   flex-direction: column;
   height: 60vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 
@@ -79,6 +76,7 @@ body {
   display: flex;
   flex-direction: row;
 }
+
 /* Der Bearbeiten- und Löschen-Button */
 .button-bearbeiten, .button-loeschen {
   border-radius: $secondary-border-radius;
@@ -90,10 +88,12 @@ body {
   margin-right: 5px;
   transition: $button-transition;
 }
+
 .button-bearbeiten:hover, .button-loeschen:hover {
   transform: scale($button-hover-scale);
   transition: $button-transition;
 }
+
 .button-loeschen {
   background: url("../Bilder/Loeschen.png");
   background-color: $background-color3;
@@ -115,6 +115,7 @@ body {
   display: flex;
   justify-content: flex-end;
 }
+
 /* Der Hinzufügen- und Zurück-Button selbst */
 .button {
   background-color: $background-color2;
@@ -134,6 +135,7 @@ body {
   margin-left: 20px;
   align-self: self-end;
 }
+
 /* Der Hinzufügen- und Zurück-Button im Hover-Modus */
 .button:hover {
   transform: scale($button-hover-scale);

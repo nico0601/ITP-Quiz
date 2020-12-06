@@ -31,7 +31,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 60vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 /* Bereich um die Frage und die Bearbeiten- und Löschen-Buttons */

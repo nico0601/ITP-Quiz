@@ -12,10 +12,8 @@
 
 <section>
     <?php
-    include("../getPDO.php");
-    include("Fragen.php");
-
-    session_start();
+    include_once("../getPDO.php");
+    include_once("Fragen.php");
 
     $sql = getPDO()->prepare("SELECT * FROM frage");
     $sql->execute();
@@ -23,17 +21,26 @@
 
     echo "<div id='fragen'>";
 
-    $fragenObjekt = new Fragen($fragen);
-    $fragenObjekt->getHTML();
+    $fragenObjekt1 = new Fragen($fragen);
 
-    $fragenObjekt->loeschen();
+    $fragenObjekt1->hinzufuegen();
+    $fragenObjekt1->loeschen();
+
+
+    $sql = getPDO()->prepare("SELECT * FROM frage");
+    $sql->execute();
+    $fragen = $sql->fetchAll();
+
+    $fragenObjekt2 = new Fragen($fragen);
+
+    $fragenObjekt2->fragenGetHTML();
 
     echo "</div>";
 
     ?>
 
     <div id="button-hinzufuegen-zurueck">
-        <form method="get" action="http://www.google.at">
+        <form method="get" action="./index3.php">
             <input type="submit" class="button" id="button-hinzufuegen" value="Hinzufügen">
         </form>
         <form method="get" action="../Landingpage/index.php">
