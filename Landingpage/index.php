@@ -10,21 +10,14 @@
     <p>Fast. Furious. Quiz!</p>
 </header>
 
-<?php
-//include("../getPDO.php");
-//
-//$sql=getPDO()->prepare("SELECT frage FROM frage");
-//$sql->execute();
-//
-//foreach ($sql -> fetchAll() as $item){
-//    echo $item[0];
-//}
-?>
+
 
 <div id="category-buttons">
-    <input class="choose-category" type="submit" id="noob-button" value="Noob">
-    <input class="choose-category" type="submit" id="medium-button" value="Medium">
-    <input class="choose-category" type="submit" id="pro-button" value="Pro">
+    <form method="get" action="index2.php">
+    <input name="schwierigkeit" class="choose-category" type="submit" id="noob-button" value="Noob">
+    <input name="schwierigkeit" class="choose-category" type="submit" id="medium-button" value="Medium">
+    <input name="schwierigkeit" class="choose-category" type="submit" id="pro-button" value="Pro">
+    </form>
 </div>
 
 
