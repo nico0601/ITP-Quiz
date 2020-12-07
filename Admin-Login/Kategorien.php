@@ -9,18 +9,20 @@ class Kategorien
     public function getList()
     {
 
-        $sql = getPDO()->prepare("SELECT kategorie FROM kategorie");
+        $sql = getPDO()->prepare("SELECT * FROM kategorie");
         $sql->execute();
         $kategorien = $sql->fetchAll();
 
-        echo "<select>";
+        echo '<div class="select-wrapper" id="select-kategorie">';
+        echo "<select name='kategorie' required>";
         foreach ($kategorien as $item) {
             $list = <<<ENDE
-                <option>$item[0]</option>
+                <option value="$item[0]">$item[1]</option>
 ENDE;
             echo $list;
         }
         echo "</select>";
+        echo "</div>";
     }
 
 }

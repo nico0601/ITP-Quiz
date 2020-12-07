@@ -83,6 +83,9 @@ ENDE;
         /* Antwort1 & Antwort2 müssen gesetzt sein wenn Frage gesetzt ist */
         if (isset($_GET['frage'])) {
 
+            $schwierigkeit = $_GET['schwierigkeit'];
+            $kategorie = $_GET['kategorie'];
+            $richtig = $_GET['richtig'];
             $frage = trim($_GET['frage']);
             $antwort1 = str_replace(".", "", trim($_GET['antwort1']));
             $antwort2 = str_replace(".", "", trim($_GET['antwort2']));
@@ -96,34 +99,35 @@ ENDE;
             }
 
 
-            $sql = getPDO()->prepare('INSERT INTO frage VALUES (?, ?, "Noob", 1)');
-            $sql->execute(array($frageID, $frage));
+            $sql = getPDO()->prepare('INSERT INTO frage VALUES (?, ?, ?, ?)');
+            $sql->execute(array($frageID, $frage, $schwierigkeit, $kategorie));
 
 
-            $this->antwortenHinzufuegen($antwort1, $frageID);
-            $this->antwortenHinzufuegen($antwort2, $frageID);
+            $this->antwortenHinzufuegen($antwort1, $richtig == 1, $frageID);
+            $this->antwortenHinzufuegen($antwort2, $richtig == 2, $frageID);
 
 
             /* Zusätzliche Fragen */
             if (isset($_GET['antwort3']) && !preg_match("/^$/", $_GET['antwort3'])) {
                 $antwort3 = str_replace(".", "", trim($_GET['antwort3']));
-                $this->antwortenHinzufuegen($antwort3, $frageID);
+                $this->antwortenHinzufuegen($antwort3, $richtig == 3, $frageID);
             }
             if (isset($_GET['antwort4']) && !preg_match("/^$/", $_GET['antwort4'])) {
                 $antwort4 = str_replace(".", "", trim($_GET['antwort4']));
-                $this->antwortenHinzufuegen($antwort4, $frageID);
+                $this->antwortenHinzufuegen($antwort4, $richtig == 4, $frageID);
             }
         }
     }
 
-    public function antwortenHinzufuegen($antwort, $frageID) {
+    public function antwortenHinzufuegen($antwort, $richtig, $frageID)
+    {
         $sql = getPDO()->prepare('SELECT * FROM antwort');
         $sql->execute();
         $antworten = $sql->fetchAll();
         $antwortenObjekt = new Antworten($antworten);
 
-        $sql = getPDO()->prepare('INSERT INTO antwort VALUES (?, ?, false, ?)');
-        $sql->execute(array($antwortenObjekt->nextAntwortID(), $antwort, $frageID));
+        $sql = getPDO()->prepare('INSERT INTO antwort VALUES (?, ?, ?, ?)');
+        $sql->execute(array($antwortenObjekt->nextAntwortID(), $antwort, $richtig, $frageID));
     }
 
 }

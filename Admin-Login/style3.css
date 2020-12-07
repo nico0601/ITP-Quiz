@@ -1,3 +1,200 @@
+@charset "UTF-8";
+body {
+  background-color: #99D6FF;
+  display: flex;
+  justify-content: center;
+  font-family: "Segoe UI";
+}
 
+/* Bereich um alles */
+.frage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin: 20px 5px;
+  width: 60vw;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Select-Style */
+select {
+  margin: 20px 0 0 0;
+  /* Browser-Eigenheiten entfernen */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  /* Abstände und transparenter Hintergrund */
+  width: 100%;
+  height: 50px;
+  -moz-padding-start: calc(10px - 3px);
+  padding-left: 10px;
+  background: #2774A8;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  /* Schatten, Ecken abrunden, Cursor */
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+#select-schwierigkeit {
+  align-self: flex-start;
+  left: 5vw;
+}
+
+#select-kategorie {
+  right: 5vw;
+  top: calc((50px + 20px)*(-1));
+  align-self: flex-end;
+}
+
+/* Browser-Eigenheiten für IE entfernen */
+select::-ms-expand {
+  display: none;
+}
+
+/* Breite für Select */
+.select-wrapper {
+  width: 200px;
+  position: relative;
+}
+
+/* Der Pfeil */
+.select-wrapper::before {
+  content: "v";
+  font-size: 20px;
+  position: absolute;
+  right: 15px;
+  top: calc(50px / 2);
+  color: white;
+  pointer-events: none;
+}
+
+/* Style für einzelne Options */
+select option {
+  color: white;
+}
+
+select:focus::-ms-value {
+  background-color: transparent;
+}
+
+/* Die Eingabefelder und Senden-Button */
+input[type=text], #senden {
+  background-color: #2774A8;
+  font-size: 1.5vw;
+  color: white;
+  padding: 20px 30px;
+  display: inline-block;
+  border: none;
+  border-radius: 20px;
+  box-sizing: border-box;
+  outline: none;
+  width: 100%;
+  left: 0;
+}
+
+/* Temporärer Text */
+input[type=text]::placeholder {
+  color: darkgray;
+}
+
+/* Layout wenn angeklickt */
+input[type=text]:focus {
+  background-color: #005fa5;
+}
+
+/* Fragen-Eingabefeld */
+#fragenName {
+  width: 100%;
+  margin: 20px 0;
+}
+
+/* Antworten-Eingabefeld */
+.antwort {
+  margin: 5px 0;
+}
+
+/* Bereich um Antwort-Eingabefeld und Radio-Button */
+.custom-control {
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+/* Position des Radio-Buttons */
+.custom-control-label::after, .custom-control-label::before {
+  left: 1em;
+  top: -1.5em;
+  width: 50px;
+  height: 50px;
+}
+
+/* Der Senden-Button */
+#senden {
+  align-self: flex-end;
+  background-color: #0C3C5C;
+  font-size: 1.5vw;
+  cursor: pointer;
+  width: min-content;
+  transition: 0.3s;
+  margin: 20px 0;
+}
+
+/* Hover-Modus */
+#senden:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+/* Bereich um Plus- bzw. Minus-Button */
+#plus-minus {
+  align-self: flex-start;
+}
+
+/* Plus- und Minus-Button selbst */
+#plus, #minus {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #0C3C5C;
+  transition: 0.3s;
+  margin: 0 5px;
+}
+
+/* Hover-Modus */
+#plus:hover:enabled, #minus:hover:enabled {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+/* Anpassung für Mobile-Version */
+@media (max-width: 991px) {
+  .frage {
+    width: 95vw;
+  }
+
+  input[type=text], #senden {
+    font-size: 20px;
+  }
+
+  #antworten {
+    width: 80vw;
+    justify-content: left;
+  }
+}
 
 /*# sourceMappingURL=style3.css.map */

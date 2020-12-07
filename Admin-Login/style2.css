@@ -66,8 +66,7 @@ body {
   padding: 5px;
   width: 44px;
   height: 44px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin: 0 5px;
   transition: 0.3s;
 }
 
@@ -99,7 +98,7 @@ body {
 
 /* Der Hinzufügen- und Zurück-Button selbst */
 .button {
-  background-color: #2774A8;
+  background-color: #0C3C5C;
   color: white;
   padding: 20px 30px;
   display: inline-block;

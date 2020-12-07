@@ -32,7 +32,7 @@ section {
 
 /* Grundformat für Überschrift, Passworteingabe und Weiter-Button */
 #ueberschrift, input[type=password], #passwort, #button-weiter {
-  background-color: #2774A8;
+  background-color: $background-color2;
   font-size: 1.5vw;
   color: $basic-font-color;
   padding: 20px 30px;
@@ -66,12 +66,10 @@ input[type=password] {
   width: 40vw;
   margin-top: 10px;
 }
-
 /* Temporärer Text */
 input[type=password]::placeholder {
   color: $placeholder-color;
 }
-
 /* Layout wenn angeklickt */
 input[type=password]:focus {
   background-color: $input-focused-color;
