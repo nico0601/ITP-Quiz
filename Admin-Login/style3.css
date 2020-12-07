@@ -183,12 +183,20 @@ input[type=text]:focus {
 
 /* Anpassung für Mobile-Version */
 @media (max-width: 991px) {
+  body {
+    overflow-x: hidden;
+  }
+
   .frage {
-    width: 95vw;
+    width: 98vw;
   }
 
   input[type=text], #senden {
     font-size: 20px;
+  }
+
+  .select-wrapper {
+    width: 120px;
   }
 
   #antworten {
