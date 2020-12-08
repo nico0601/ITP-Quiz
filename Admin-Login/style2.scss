@@ -1,17 +1,4 @@
-$body-background-color: #99D6FF;
-$background-color2: #2774A8;
-$background-color3: #0C3C5C;
-$background-color4: #002f43;
-
-$font: "Segoe UI";
-$basic-font-color: white;
-
-$button-hover-scale: 1.1;
-$button-transition: 0.3s;
-
-$primary-border-radius: 20px;
-$secondary-border-radius: 10px;
-$scrollbar-border-radius: 10px;
+@import "../variables.scss";
 
 
 body {

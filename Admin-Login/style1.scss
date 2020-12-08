@@ -1,16 +1,4 @@
-$body-background-color: #99D6FF;
-$background-color2: #2774A8;
-$background-color3: #0C3C5C;
-
-$font: "Segoe UI";
-$basic-font-color: white;
-$error-color: red;
-
-$input-focused-color: #005fa5;
-$placeholder-color: darkgray;
-
-$button-hover-scale: 1.1;
-$button-transition: 0.3s;
+@import "../variables.scss";
 
 
 body {
