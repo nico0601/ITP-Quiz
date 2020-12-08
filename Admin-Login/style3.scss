@@ -21,7 +21,6 @@ $select-height: 50px;
 $select-margin: 20px;
 
 
-
 body {
   background-color: $body-background-color;
   display: flex;
@@ -66,29 +65,34 @@ select {
   font-size: 16px;
   font-weight: bold;
   /* Schatten, Ecken abrunden, Cursor */
-  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.3);
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
   border-radius: $select-border-radius;
   outline: none;
   cursor: pointer;
 }
+
 #select-schwierigkeit {
   align-self: flex-start;
   left: 5vw;
 }
+
 #select-kategorie {
   right: 5vw;
-  top: calc((#{$select-height} + #{$select-margin})*(-1));
+  top: calc((#{$select-height} + #{$select-margin}) * (-1));
   align-self: flex-end;
 }
+
 /* Browser-Eigenheiten für IE entfernen */
 select::-ms-expand {
   display: none;
 }
+
 /* Breite für Select */
 .select-wrapper {
   width: 200px;
   position: relative;
 }
+
 /* Der Pfeil */
 .select-wrapper::before {
   content: "\0076";
@@ -99,14 +103,15 @@ select::-ms-expand {
   color: $basic-font-color;
   pointer-events: none;
 }
+
 /* Style für einzelne Options */
 select option {
   color: $basic-font-color;
 }
+
 select:focus::-ms-value {
   background-color: transparent;
 }
-
 
 
 /* Die Eingabefelder und Senden-Button */
@@ -123,10 +128,12 @@ input[type=text], #senden {
   width: 100%;
   left: 0;
 }
+
 /* Temporärer Text */
 input[type=text]::placeholder {
   color: $placeholder-color;
 }
+
 /* Layout wenn angeklickt */
 input[type=text]:focus {
   background-color: $input-focused-color;
@@ -171,6 +178,7 @@ input[type=text]:focus {
   transition: $button-transition;
   margin: 20px 0;
 }
+
 /* Hover-Modus */
 #senden:hover {
   transform: scale($button-hover-scale);
@@ -182,6 +190,7 @@ input[type=text]:focus {
 #plus-minus {
   align-self: flex-start;
 }
+
 /* Plus- und Minus-Button selbst */
 #plus, #minus {
   width: 100px;
@@ -192,12 +201,12 @@ input[type=text]:focus {
   transition: $button-transition;
   margin: 0 5px;
 }
+
 /* Hover-Modus */
 #plus:hover:enabled, #minus:hover:enabled {
   transform: scale($button-hover-scale);
   transition: $button-transition;
 }
-
 
 
 /* Anpassung für Mobile-Version */

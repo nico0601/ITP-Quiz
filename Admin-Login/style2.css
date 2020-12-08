@@ -75,8 +75,23 @@ body {
   transition: 0.3s;
 }
 
-.button-loeschen {
+.button-loeschen, .button-bearbeiten {
   background: url("../Bilder/Loeschen.png");
+  background-color: #0C3C5C;
+  background-size: 44px 44px;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  cursor: pointer;
+  color: transparent;
+  padding: 5px;
+  width: 44px;
+  height: 44px;
+  border: none;
+}
+
+.button-bearbeiten {
+  background: url("../Bilder/Bearbeiten.png");
   background-color: #0C3C5C;
   background-size: 44px 44px;
   background-position: center;

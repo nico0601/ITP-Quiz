@@ -14,14 +14,12 @@ $secondary-border-radius: 10px;
 $scrollbar-border-radius: 10px;
 
 
-
 body {
   background-color: $body-background-color;
   display: flex;
   justify-content: center;
   font-family: $font;
 }
-
 
 
 /* Scrollbar */
@@ -42,7 +40,6 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: $background-color4;
 }
-
 
 
 /* Bereich um alles */
@@ -79,6 +76,7 @@ body {
   display: flex;
   flex-direction: row;
 }
+
 /* Der Bearbeiten- und Löschen-Button */
 .button-bearbeiten, .button-loeschen {
   border-radius: $secondary-border-radius;
@@ -89,12 +87,28 @@ body {
   margin: 0 5px;
   transition: $button-transition;
 }
+
 .button-bearbeiten:hover, .button-loeschen:hover {
   transform: scale($button-hover-scale);
   transition: $button-transition;
 }
-.button-loeschen {
+
+.button-loeschen, .button-bearbeiten {
   background: url("../Bilder/Loeschen.png");
+  background-color: $background-color3;
+  background-size: 44px 44px;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  cursor: pointer;
+  color: transparent;
+  padding: 5px;
+  width: 44px;
+  height: 44px;
+  border: none;
+}
+.button-bearbeiten {
+  background: url("../Bilder/Bearbeiten.png");
   background-color: $background-color3;
   background-size: 44px 44px;
   background-position: center;
@@ -114,6 +128,7 @@ body {
   display: flex;
   justify-content: flex-end;
 }
+
 /* Der Hinzufügen- und Zurück-Button selbst */
 .button {
   background-color: $background-color3;
@@ -133,6 +148,7 @@ body {
   margin-left: 20px;
   align-self: self-end;
 }
+
 /* Der Hinzufügen- und Zurück-Button im Hover-Modus */
 .button:hover {
   transform: scale($button-hover-scale);

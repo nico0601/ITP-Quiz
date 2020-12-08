@@ -14,7 +14,7 @@ class Kategorien
         $kategorien = $sql->fetchAll();
 
         echo '<div class="select-wrapper" id="select-kategorie">';
-        echo "<select name='kategorie' required>";
+        echo "<select name='kategorie-3' required>";
         foreach ($kategorien as $item) {
             $list = <<<ENDE
                 <option value="$item[0]">$item[1]</option>

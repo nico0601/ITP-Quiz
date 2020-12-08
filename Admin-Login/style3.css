@@ -54,7 +54,7 @@ select {
 
 #select-kategorie {
   right: 5vw;
-  top: calc((50px + 20px)*(-1));
+  top: calc((50px + 20px) * (-1));
   align-self: flex-end;
 }
 

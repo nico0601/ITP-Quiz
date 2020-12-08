@@ -23,8 +23,9 @@
 
     $fragenObjekt1 = new Fragen($fragen);
 
-    $fragenObjekt1->hinzufuegen();
+    $fragenObjekt1->bearbeiten();
     $fragenObjekt1->loeschen();
+    $fragenObjekt1->hinzufuegen();
 
 
     $sql = getPDO()->prepare("SELECT * FROM frage");
