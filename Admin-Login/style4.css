@@ -12,8 +12,13 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  margin: 20px 0;
+  margin: 40px 0;
   width: 60vw;
+}
+
+#antworten {
+  width: 50vw;
+  align-self: center;
 }
 
 form {
@@ -23,9 +28,37 @@ form {
   width: 100%;
 }
 
-/* Die Eingabefelder und Senden-Button */
-input[type=text], #senden {
+/* Textarea Gestaltung */
+.md-form {
+  margin: 20px 0;
+}
+
+.form-control {
+  font-size: 1.5vw;
   background-color: #2774A8;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+#fragenName {
+  font-size: 2vw;
+}
+
+.form-control::placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+.form-control:focus {
+  background-color: #005fa5;
+  border: none;
+  color: white;
+}
+
+/* Der Senden-Button */
+.button {
   font-size: 1.5vw;
   color: white;
   padding: 20px 30px;
@@ -34,44 +67,17 @@ input[type=text], #senden {
   border-radius: 20px;
   box-sizing: border-box;
   outline: none;
-  width: 100%;
   left: 0;
-}
-
-/* Temporärer Text */
-input[type=text]::placeholder {
-  color: darkgray;
-}
-
-/* Layout wenn angeklickt */
-input[type=text]:focus {
-  background-color: #005fa5;
-}
-
-/* Fragen-Eingabefeld */
-#fragenName {
-  width: 100%;
-  margin: 20px 0;
-}
-
-/* Antworten-Eingabefeld */
-.antwort {
-  margin: 5px 0;
-}
-
-/* Der Senden-Button */
-#senden {
   align-self: flex-end;
   background-color: #0C3C5C;
-  font-size: 1.5vw;
   cursor: pointer;
-  width: min-content;
+  width: 10vw;
   transition: 0.3s;
-  margin: 20px 0;
+  margin: 20px 0 0 0;
 }
 
 /* Hover-Modus */
-#senden:hover {
+.button:hover {
   transform: scale(1.1);
   transition: 0.3s;
 }
@@ -82,13 +88,21 @@ input[type=text]:focus {
     width: 95vw;
   }
 
-  input[type=text], #senden {
+  .form-control {
     font-size: 20px;
+  }
+
+  #fragenName {
+    font-size: 25px;
+  }
+
+  .button {
+    font-size: 20px;
+    width: 150px;
   }
 
   #antworten {
     width: 80vw;
-    justify-content: left;
   }
 }
 

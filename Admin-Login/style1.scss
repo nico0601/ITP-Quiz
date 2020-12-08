@@ -58,6 +58,7 @@ input[type=password] {
 /* Temporärer Text */
 input[type=password]::placeholder {
   color: $placeholder-color;
+  opacity: 0.5;
 }
 
 /* Layout wenn angeklickt */

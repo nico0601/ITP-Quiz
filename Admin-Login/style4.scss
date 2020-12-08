@@ -15,8 +15,12 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  margin: 20px 0;
+  margin: 40px 0;
   width: 60vw;
+}
+#antworten {
+  width: 50vw;
+  align-self: center;
 }
 
 form {
@@ -27,10 +31,35 @@ form {
 }
 
 
-
-/* Die Eingabefelder und Senden-Button */
-input[type=text], #senden {
+/* Textarea Gestaltung */
+.md-form {
+  margin: 20px 0;
+}
+.form-control {
+  font-size: 1.5vw;
   background-color: $background-color2;
+  border: none;
+  color: $basic-font-color;
+  padding: 10px;
+  text-align: center;
+}
+#fragenName {
+  font-size: 2vw;
+}
+.form-control::placeholder {
+  color: $basic-font-color;
+  opacity: 0.5;
+}
+.form-control:focus {
+  background-color: $input-focused-color;
+  border: none;
+  color: $basic-font-color;
+}
+
+
+
+/* Der Senden-Button */
+.button {
   font-size: 1.5vw;
   color: $basic-font-color;
   padding: 20px 30px;
@@ -39,49 +68,22 @@ input[type=text], #senden {
   border-radius: $primary-border-radius;
   box-sizing: border-box;
   outline: none;
-  width: 100%;
   left: 0;
-}
-
-/* Temporärer Text */
-input[type=text]::placeholder {
-  color: $placeholder-color;
-}
-
-/* Layout wenn angeklickt */
-input[type=text]:focus {
-  background-color: $input-focused-color;
-}
-
-
-/* Fragen-Eingabefeld */
-#fragenName {
-  width: 100%;
-  margin: 20px 0;
-}
-
-/* Antworten-Eingabefeld */
-.antwort {
-  margin: 5px 0;
-}
-
-
-/* Der Senden-Button */
-#senden {
   align-self: flex-end;
   background-color: $background-color3;
-  font-size: 1.5vw;
   cursor: pointer;
-  width: min-content;
+  width: 10vw;
   transition: $button-transition;
-  margin: 20px 0;
+  margin: 20px 0 0 0;
 }
 
 /* Hover-Modus */
-#senden:hover {
+.button:hover {
   transform: scale($button-hover-scale);
   transition: $button-transition;
 }
+
+
 
 
 /* Anpassung für Mobile-Version */
@@ -90,12 +92,19 @@ input[type=text]:focus {
   .frage {
     width: 95vw;
   }
-  input[type=text], #senden {
+  .form-control {
     font-size: 20px;
+  }
+  #fragenName {
+    font-size: 25px;
+  }
+  .button {
+    font-size: 20px;
+    width: 150px;
   }
 
   #antworten {
     width: 80vw;
-    justify-content: left;
+    //align-self: center;
   }
 }
