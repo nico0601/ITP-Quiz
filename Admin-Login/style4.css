@@ -1,13 +1,10 @@
-@import "../variables.scss";
-
-
+@charset "UTF-8";
 body {
-  background-color: $body-background-color;
+  background-color: #99D6FF;
   display: flex;
   justify-content: center;
-  font-family: $font;
+  font-family: "Segoe UI";
 }
-
 
 /* Bereich um alles */
 .frage {
@@ -26,17 +23,15 @@ form {
   width: 100%;
 }
 
-
-
 /* Die Eingabefelder und Senden-Button */
 input[type=text], #senden {
-  background-color: $background-color2;
+  background-color: #2774A8;
   font-size: 1.5vw;
-  color: $basic-font-color;
+  color: white;
   padding: 20px 30px;
   display: inline-block;
   border: none;
-  border-radius: $primary-border-radius;
+  border-radius: 20px;
   box-sizing: border-box;
   outline: none;
   width: 100%;
@@ -45,14 +40,13 @@ input[type=text], #senden {
 
 /* Temporärer Text */
 input[type=text]::placeholder {
-  color: $placeholder-color;
+  color: darkgray;
 }
 
 /* Layout wenn angeklickt */
 input[type=text]:focus {
-  background-color: $input-focused-color;
+  background-color: #005fa5;
 }
-
 
 /* Fragen-Eingabefeld */
 #fragenName {
@@ -65,31 +59,29 @@ input[type=text]:focus {
   margin: 5px 0;
 }
 
-
 /* Der Senden-Button */
 #senden {
   align-self: flex-end;
-  background-color: $background-color3;
+  background-color: #0C3C5C;
   font-size: 1.5vw;
   cursor: pointer;
   width: min-content;
-  transition: $button-transition;
+  transition: 0.3s;
   margin: 20px 0;
 }
 
 /* Hover-Modus */
 #senden:hover {
-  transform: scale($button-hover-scale);
-  transition: $button-transition;
+  transform: scale(1.1);
+  transition: 0.3s;
 }
-
 
 /* Anpassung für Mobile-Version */
 @media (max-width: 991px) {
-
   .frage {
     width: 95vw;
   }
+
   input[type=text], #senden {
     font-size: 20px;
   }
@@ -99,3 +91,5 @@ input[type=text]:focus {
     justify-content: left;
   }
 }
+
+/*# sourceMappingURL=style4.css.map */

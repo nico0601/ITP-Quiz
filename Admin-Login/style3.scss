@@ -15,7 +15,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  margin: 20px 5px;
+  margin: 20px 0;
   width: 60vw;
 }
 
@@ -191,12 +191,12 @@ input[type=text]:focus {
 
 /* Anpassung für Mobile-Version */
 @media (max-width: 991px) {
-  body {
-    overflow-x: hidden;
-  }
+  //body {
+  //  overflow-x: hidden;
+  //}
 
   .frage {
-    width: 98vw;
+    width: 95vw;
   }
   input[type=text], #senden {
     font-size: 20px;
