@@ -67,22 +67,29 @@ ENDE;
                     <label for="radio2" class="custom-control-label"></label>
                 </div>
                 <div id="antwort3feld" class="custom-control custom-radio">
-                    <input type="text" class="antwort" id="antwort3" name="antwort3-3" placeholder="Antwort 3..." required
+                    <input type="text" class="antwort" id="antwort3" name="antwort3-3" placeholder="Antwort 3..."
+                           required
                            disabled style="opacity: 0.5">
                     <input type="radio" id="radio3" name="richtig-3" value="3" class="custom-control-input" required
                            disabled style="opacity: 0">
                     <label for="radio3" class="custom-control-label"></label>
                 </div>
                 <div id="antwort4feld" class="custom-control custom-radio">
-                    <input type="text" class="antwort" id="antwort4" name="antwort4-3" placeholder="Antwort 4..." required
+                    <input type="text" class="antwort" id="antwort4" name="antwort4-3" placeholder="Antwort 4..."
+                           required
                            disabled style="opacity: 0.5">
                     <input type="radio" id="radio4" name="richtig-3" value="4" class="custom-control-input" required
                            disabled style="opacity: 0">
                     <label for="radio4" class="custom-control-label"></label>
                 </div>
             </div>
-            <input id="senden" type="submit">
+            <input id="senden" type="submit" value="Frage erstellen">
         </form>
+
+       <form action="./index2.php" method="get">
+           <input id="zurueck" type="submit" value="Zurück">
+       </form>
+
         <div id="plus-minus">
             <input id="plus" type="image" src="../Bilder/Plus.png">
             <input id="minus" type="image" src="../Bilder/Minus.png" style="opacity: 0.5" disabled>

@@ -78,6 +78,7 @@ body {
 .button-bearbeiten:hover, .button-loeschen:hover {
   transform: scale($button-hover-scale);
   transition: $button-transition;
+  box-shadow: $basic-shadow;
 }
 
 .button-loeschen, .button-bearbeiten {
@@ -140,6 +141,7 @@ body {
 .button:hover {
   transform: scale($button-hover-scale);
   transition: $button-transition;
+  box-shadow: $basic-shadow;
 }
 
 
@@ -162,13 +164,13 @@ body {
     text-align: center;
   }
 
-  #button-bearbeiten-loeschen {
+  .button-bearbeiten-loeschen {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
-  #button-bearbeiten, #button-loeschen {
+  .button-bearbeiten, .button-loeschen {
     border-radius: $secondary-border-radius;
     background-color: $background-color3;
     padding: 5px;
@@ -179,13 +181,13 @@ body {
   }
 
 
-  #button-hinzufuegen-zurueck {
+  .button-hinzufuegen-zurueck {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
   }
   .button {
     font-size: 15px;
-    width: 150px;
+    width: 200px;
     margin: 50px 10px;
   }
 }

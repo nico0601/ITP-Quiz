@@ -55,6 +55,7 @@ form {
   background-color: #005fa5;
   border: none;
   color: white;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 /* Der Senden-Button */
@@ -80,6 +81,7 @@ form {
 .button:hover {
   transform: scale(1.1);
   transition: 0.3s;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 /* Anpassung für Mobile-Version */

@@ -54,6 +54,7 @@ form {
   background-color: $input-focused-color;
   border: none;
   color: $basic-font-color;
+  box-shadow: $basic-shadow;
 }
 
 
@@ -81,6 +82,7 @@ form {
 .button:hover {
   transform: scale($button-hover-scale);
   transition: $button-transition;
+  box-shadow: $basic-shadow;
 }
 
 

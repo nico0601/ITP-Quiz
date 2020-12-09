@@ -29,7 +29,7 @@ form {
 
 /* Select-Style */
 select {
-  margin: $select-margin 0 0 0;
+  margin: $select-margin;
   /* Browser-Eigenheiten entfernen */
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -45,7 +45,7 @@ select {
   font-size: 16px;
   font-weight: bold;
   /* Schatten, Ecken abrunden, Cursor */
-  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: $basic-shadow;
   border-radius: $select-border-radius;
   outline: none;
   cursor: pointer;
@@ -95,7 +95,7 @@ select:focus::-ms-value {
 
 
 /* Die Eingabefelder und Senden-Button */
-input[type=text], #senden {
+input[type=text], #senden, #zurueck {
   background-color: $background-color2;
   font-size: 1.5vw;
   color: $basic-font-color;
@@ -117,6 +117,7 @@ input[type=text]::placeholder {
 /* Layout wenn angeklickt */
 input[type=text]:focus {
   background-color: $input-focused-color;
+  box-shadow: $basic-shadow;
 }
 
 /* Fragen-Eingabefeld */
@@ -149,20 +150,21 @@ input[type=text]:focus {
 
 
 /* Der Senden-Button */
-#senden {
+#senden, #zurueck {
   align-self: flex-end;
   background-color: $background-color3;
   font-size: 1.5vw;
   cursor: pointer;
-  width: min-content;
+  width: 15vw;
   transition: $button-transition;
-  margin: 20px 0;
+  margin: 20px 0 0 0;
 }
 
 /* Hover-Modus */
-#senden:hover {
+#senden:hover, #zurueck:hover {
   transform: scale($button-hover-scale);
   transition: $button-transition;
+  box-shadow: $basic-shadow;
 }
 
 
@@ -186,19 +188,16 @@ input[type=text]:focus {
 #plus:hover:enabled, #minus:hover:enabled {
   transform: scale($button-hover-scale);
   transition: $button-transition;
+  box-shadow: $basic-shadow;
 }
 
 
 /* Anpassung für Mobile-Version */
 @media (max-width: 991px) {
-  //body {
-  //  overflow-x: hidden;
-  //}
-
   .frage {
     width: 95vw;
   }
-  input[type=text], #senden {
+  input[type=text], #senden, #zurueck {
     font-size: 20px;
   }
 
@@ -209,6 +208,10 @@ input[type=text]:focus {
   #antworten {
     width: 80vw;
     justify-content: left;
+  }
+
+  #senden, #zurueck {
+    width: 200px;
   }
 
   #plus, #minus {

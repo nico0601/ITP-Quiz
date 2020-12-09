@@ -54,7 +54,7 @@ select {
 
 #select-kategorie {
   right: 5vw;
-  top: calc((50px + 20px) * (-1));
+  top: calc((50px + 20px 0 0 0) * (-1));
   align-self: flex-end;
 }
 
@@ -90,7 +90,7 @@ select:focus::-ms-value {
 }
 
 /* Die Eingabefelder und Senden-Button */
-input[type=text], #senden {
+input[type=text], #senden, #zurueck {
   background-color: #2774A8;
   font-size: 1.5vw;
   color: white;
@@ -112,6 +112,7 @@ input[type=text]::placeholder {
 /* Layout wenn angeklickt */
 input[type=text]:focus {
   background-color: #005fa5;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 /* Fragen-Eingabefeld */
@@ -143,20 +144,21 @@ input[type=text]:focus {
 }
 
 /* Der Senden-Button */
-#senden {
+#senden, #zurueck {
   align-self: flex-end;
   background-color: #0C3C5C;
   font-size: 1.5vw;
   cursor: pointer;
-  width: min-content;
+  width: 15vw;
   transition: 0.3s;
-  margin: 20px 0;
+  margin: 20px 0 0 0;
 }
 
 /* Hover-Modus */
-#senden:hover {
+#senden:hover, #zurueck:hover {
   transform: scale(1.1);
   transition: 0.3s;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 /* Bereich um Plus- bzw. Minus-Button */
@@ -179,6 +181,7 @@ input[type=text]:focus {
 #plus:hover:enabled, #minus:hover:enabled {
   transform: scale(1.1);
   transition: 0.3s;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 /* Anpassung für Mobile-Version */
@@ -187,7 +190,7 @@ input[type=text]:focus {
     width: 95vw;
   }
 
-  input[type=text], #senden {
+  input[type=text], #senden, #zurueck {
     font-size: 20px;
   }
 
@@ -198,6 +201,10 @@ input[type=text]:focus {
   #antworten {
     width: 80vw;
     justify-content: left;
+  }
+
+  #senden, #zurueck {
+    width: 200px;
   }
 
   #plus, #minus {
