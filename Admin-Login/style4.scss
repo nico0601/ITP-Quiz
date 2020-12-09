@@ -102,11 +102,10 @@ form {
   }
   .button {
     font-size: 20px;
-    width: 150px;
+    width: $button-mobile-size;
   }
 
   #antworten {
     width: 80vw;
-    //align-self: center;
   }
 }

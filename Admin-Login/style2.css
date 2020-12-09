@@ -145,6 +145,7 @@ body {
     width: 80vw;
     margin: 5px 5px;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     background-color: #99D6FF;
   }
@@ -183,7 +184,8 @@ body {
 
   .button {
     font-size: 15px;
-    width: 200px;
+    width: 150px;
+    padding: 20px 20px;
     margin: 50px 10px;
   }
 }

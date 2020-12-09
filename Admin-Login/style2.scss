@@ -15,7 +15,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: $scrollbar-background;
   border-radius: $scrollbar-border-radius;
 }
 
@@ -69,8 +69,8 @@ body {
   border-radius: $secondary-border-radius;
   background-color: $background-color3;
   padding: 5px;
-  width: 44px;
-  height: 44px;
+  width: $bearbeiten-loeschen-size;
+  height: $bearbeiten-loeschen-size;
   margin: 0 5px;
   transition: $button-transition;
 }
@@ -84,29 +84,29 @@ body {
 .button-loeschen, .button-bearbeiten {
   background: url("../Bilder/Loeschen.png");
   background-color: $background-color3;
-  background-size: 44px 44px;
+  background-size: $bearbeiten-loeschen-size $bearbeiten-loeschen-size;
   background-position: center;
   background-repeat: no-repeat;
   box-sizing: content-box;
   cursor: pointer;
   color: transparent;
   padding: 5px;
-  width: 44px;
-  height: 44px;
+  width: $bearbeiten-loeschen-size;
+  height: $bearbeiten-loeschen-size;
   border: none;
 }
 .button-bearbeiten {
   background: url("../Bilder/Bearbeiten.png");
   background-color: $background-color3;
-  background-size: 44px 44px;
+  background-size: $bearbeiten-loeschen-size $bearbeiten-loeschen-size;
   background-position: center;
   background-repeat: no-repeat;
   box-sizing: content-box;
   cursor: pointer;
   color: transparent;
   padding: 5px;
-  width: 44px;
-  height: 44px;
+  width: $bearbeiten-loeschen-size;
+  height: $bearbeiten-loeschen-size;
   border: none;
 }
 
@@ -151,6 +151,7 @@ body {
     width: 80vw;
     margin: 5px 5px;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     background-color: $body-background-color;
   }
@@ -174,7 +175,7 @@ body {
     border-radius: $secondary-border-radius;
     background-color: $background-color3;
     padding: 5px;
-    width: 44px;
+    width: $bearbeiten-loeschen-size;
     margin-left: 20px;
     margin-right: 20px;
     transition: $button-transition;
@@ -187,7 +188,8 @@ body {
   }
   .button {
     font-size: 15px;
-    width: 200px;
+    width: $button-mobile-size;
+    padding: 20px 20px;
     margin: 50px 10px;
   }
 }

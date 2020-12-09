@@ -60,6 +60,7 @@ input[type=password]::placeholder {
 /* Layout wenn angeklickt */
 input[type=password]:focus {
   background-color: #005fa5;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 /* Der Weiter-Button */
@@ -74,6 +75,7 @@ input[type=password]:focus {
 #button-weiter:hover {
   transform: scale(1.1);
   transition: 0.3s;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 /* Anpassung für Mobile-Version */
