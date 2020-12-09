@@ -83,7 +83,7 @@ ENDE;
                     <label for="radio4" class="custom-control-label"></label>
                 </div>
             </div>
-            <input id="senden" type="submit" value="Frage erstellen">
+            <input id="senden" type="submit" value="Erstellen">
         </form>
 
        <form action="./index2.php" method="get">
