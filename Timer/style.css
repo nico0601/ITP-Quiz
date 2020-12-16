@@ -1,0 +1,125 @@
+@charset "UTF-8";
+body {
+  background-color: #99D6FF;
+  display: flex;
+  justify-content: center;
+  font-family: "Segoe UI";
+}
+
+/* Bereich um alles */
+section {
+  width: 65vw;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15vh;
+}
+
+/* Der Timer */
+#timer {
+  font-size: 2.5vw;
+  font-weight: bold;
+  color: red;
+  padding: 20px 30px;
+  justify-content: flex-end;
+  align-self: flex-end;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.klein {
+  transform: scale(1);
+  transition: 1s ease-out;
+}
+
+.gross {
+  transform: scale(2);
+  transition: 1s ease-in;
+}
+
+/* Grundformat für Überschrift, Passworteingabe und Weiter-Button */
+#ueberschrift, input[type=password], #passwort, #button-weiter {
+  background-color: #2774A8;
+  font-size: 1.5vw;
+  color: white;
+  padding: 20px 30px;
+  display: inline-block;
+  border: none;
+  border-radius: 20px;
+  box-sizing: border-box;
+  outline: none;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* Die Überschrift */
+#ueberschrift {
+  font-size: 3.2vw;
+  width: 100%;
+}
+
+/* Text bei falscher Passworteingabe */
+#passwort {
+  color: red;
+  width: max-content;
+  background-color: #0C3C5C;
+  padding: 10px 15px;
+  margin-bottom: 0;
+  font-size: 1.2vw;
+}
+
+/* Die Passworteingabe */
+input[type=password] {
+  width: 40vw;
+  margin-top: 10px;
+}
+
+/* Temporärer Text */
+input[type=password]::placeholder {
+  color: darkgray;
+  opacity: 0.5;
+}
+
+/* Layout wenn angeklickt */
+input[type=password]:focus {
+  background-color: #005fa5;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* Der Weiter-Button */
+#button-weiter {
+  font-size: 2.8vw;
+  cursor: pointer;
+  width: min-content;
+  transition: 0.3s;
+}
+
+/* Hover-Modus */
+#button-weiter:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* Anpassung für Mobile-Version */
+@media (max-width: 991px) {
+  body {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  section {
+    width: 95vw;
+  }
+
+  #ueberschrift, input[type=password], #passwort, #button-weiter {
+    font-size: 20px;
+  }
+
+  input[type=password] {
+    min-width: 300px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
