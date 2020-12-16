@@ -42,6 +42,7 @@ form {
   color: $basic-font-color;
   padding: 10px;
   text-align: center;
+  transition: $button-transition;
 }
 #fragenName {
   font-size: 2vw;
@@ -55,6 +56,7 @@ form {
   border: none;
   color: $basic-font-color;
   box-shadow: $basic-shadow;
+  transition: $button-transition;
 }
 
 

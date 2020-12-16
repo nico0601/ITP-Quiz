@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/nico0601/ITP-Quiz#readme",
   "dependencies": {
-    "node-sass": "^5.0.0"
+    "node-sass": "^5.0.0",
+    "password-hash": "^1.2.2"
   },
   "devDependencies": {}
 }

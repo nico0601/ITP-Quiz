@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!-- Admin-Login -->
 
 <!DOCTYPE html>
@@ -12,15 +13,50 @@
 <body>
 
 <section>
+
     <header>
         <h1 id="ueberschrift">Bitte Admin-Passwort eingeben:</h1>
     </header>
 
     <p id="passwort" style="display: none"></p>
 
-    <input id="passwortEingabe" type="password" placeholder="Ihr Passwort..." autofocus>
+    <?php
 
-    <button type="submit" id="button-weiter">Weiter</button>
+    if (!isset($_SESSION['zaehler'])) {
+        $_SESSION['zaehler'] = 0;
+    }
+
+    $hash = password_hash('admin', PASSWORD_BCRYPT);
+
+    if (isset($_GET['passwort'])) {
+        if (password_verify($_GET['passwort'], $hash)) {
+            echo "<script>window.location = 'index2.php'</script>";
+        } elseif ($_SESSION['zaehler'] === 2) {
+            session_unset();
+            echo "<script>window.location = '../Landingpage/index.php'</script>";
+        } else {
+            $_SESSION['zaehler'] += 1;
+            echo "<script>
+                let passwortError = document.getElementById('passwort')
+                    if (".$_SESSION['zaehler']." <= 2) {
+                        let zaehler = ".($_SESSION['zaehler']+1)."
+                        console.log('asd')
+                        passwortError.style.display = 'inherit'
+                        passwortError.innerHTML = 'Falsche Passworteingabe! Versuch '+zaehler+'/3:'
+                    }
+            </script>";
+        }
+    }
+
+    ?>
+
+    <form method="get" action="../Admin-Login/index.php">
+
+        <input type="password" id="passwortEingabe" name="passwort" placeholder="Ihr Passwort..." autofocus>
+        <button type="submit" id="button-weiter" value="Weiter">Weiter</button>
+
+    </form>
+
 </section>
 
 </body>

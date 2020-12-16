@@ -40,6 +40,7 @@ form {
   color: white;
   padding: 10px;
   text-align: center;
+  transition: 0.3s;
 }
 
 #fragenName {
@@ -56,6 +57,7 @@ form {
   border: none;
   color: white;
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
 }
 
 /* Der Senden-Button */

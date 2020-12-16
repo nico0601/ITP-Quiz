@@ -102,6 +102,7 @@ input[type=text], #senden, #zurueck {
   outline: none;
   width: 100%;
   left: 0;
+  transition: 0.3s;
 }
 
 /* Temporärer Text */
@@ -112,6 +113,7 @@ input[type=text]::placeholder {
 /* Layout wenn angeklickt */
 input[type=text]:focus {
   background-color: #005fa5;
+  transition: 0.3s;
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
 }
 

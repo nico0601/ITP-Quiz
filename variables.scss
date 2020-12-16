@@ -3,16 +3,19 @@ $background-color2: #2774A8;
 $background-color3: #0C3C5C;
 $background-color4: #002f43;
 $scrollbar-background: #ffffff;
+$input-focused-color: #005fa5;
 
 $font: "Segoe UI";
 $basic-font-color: white;
 $error-color: red;
-
-$input-focused-color: #005fa5;
 $placeholder-color: darkgray;
 
 $button-hover-scale: 1.1;
+
 $button-transition: 0.3s;
+$timer-transition: 1.0s;
+
+$timer-ease: 0;
 
 $primary-border-radius: 20px;
 $secondary-border-radius: 10px;

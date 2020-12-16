@@ -1,28 +1,50 @@
-@charset "UTF-8";
+@import "../variables.scss";
+
+
 body {
-  background-color: #99D6FF;
+  background-color: $body-background-color;
   display: flex;
   justify-content: center;
-  font-family: "Segoe UI";
+  font-family: $font;
 }
 
+
 /* Bereich um alles */
-section, form {
+section {
   width: 65vw;
   display: flex;
   flex-direction: column;
   margin-top: 15vh;
 }
 
-form {
-  margin-top: 0;
+
+/* Der Timer */
+#timer {
+  font-size: 2.5vw;
+  font-weight: bold;
+  color: $error-color;
+  padding: 20px 30px;
+  justify-content: flex-end;
+  align-self: flex-end;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+.klein {
+  transform: scale(1);
+  transition: $timer-transition ease-out;
+
+}
+.gross {
+  transform: scale(2);
+  transition: $timer-transition ease-in;
 }
 
 /* Grundformat für Überschrift, Passworteingabe und Weiter-Button */
 #ueberschrift, input[type=password], #passwort, #button-weiter {
-  background-color: #2774A8;
+  background-color: $background-color2;
   font-size: 1.5vw;
-  color: white;
+  color: $basic-font-color;
   padding: 20px 30px;
   display: inline-block;
   border: none;
@@ -41,9 +63,9 @@ form {
 
 /* Text bei falscher Passworteingabe */
 #passwort {
-  color: red;
+  color: $error-color;
   width: max-content;
-  background-color: #0C3C5C;
+  background-color: $background-color3;
   padding: 10px 15px;
   margin-bottom: 0;
   font-size: 1.2vw;
@@ -53,20 +75,18 @@ form {
 input[type=password] {
   width: 40vw;
   margin-top: 10px;
-  transition: 0.3s;
 }
 
 /* Temporärer Text */
 input[type=password]::placeholder {
-  color: darkgray;
+  color: $placeholder-color;
   opacity: 0.5;
 }
 
 /* Layout wenn angeklickt */
 input[type=password]:focus {
-  background-color: #005fa5;
-  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
-  transition: 0.3s;
+  background-color: $input-focused-color;
+  box-shadow: $basic-shadow;
 }
 
 /* Der Weiter-Button */
@@ -74,15 +94,16 @@ input[type=password]:focus {
   font-size: 2.8vw;
   cursor: pointer;
   width: min-content;
-  transition: 0.3s;
+  transition: $button-transition;
 }
 
 /* Hover-Modus */
 #button-weiter:hover {
-  transform: scale(1.1);
-  transition: 0.3s;
-  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
+  transform: scale($button-hover-scale);
+  transition: $button-transition;
+  box-shadow: $basic-shadow;
 }
+
 
 /* Anpassung für Mobile-Version */
 @media (max-width: 991px) {
@@ -91,18 +112,13 @@ input[type=password]:focus {
     justify-content: center;
     padding: 0;
   }
-
   section {
     width: 95vw;
   }
-
   #ueberschrift, input[type=password], #passwort, #button-weiter {
     font-size: 20px;
   }
-
   input[type=password] {
     min-width: 300px;
   }
 }
-
-/*# sourceMappingURL=style1.css.map */
