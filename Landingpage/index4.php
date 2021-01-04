@@ -6,63 +6,66 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-        .richtig {
-            background: green;
-        }
-
-        .falsch {
-            background: red;
-        }
-
-        .auswertung {
-            width: length;
-        }
-    </style>
+    <link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="auswertung.js" defer></script>
 </head>
 <body>
-<?php
-echo "<br>";
-include("../getPDO.php");
+<header id="header">
+    <p>Fast. Furious. Quiz!</p>
+</header>
 
-$frage = getPDO()->prepare("SELECT * FROM frage WHERE fk_pk_name= ? AND fk_pk_kategorie= ?");
-$frage->execute(array($_SESSION["schwierigkeit"], $_SESSION["foreignkey"]));
+<div id="secondbackground">
+    <p id="firstbackground" class="endresult">Endergebnis</p>
+
+    <?php
+    include("../getPDO.php");
+    $counter = 0;
+
+    $frage = getPDO()->prepare("SELECT * FROM frage WHERE fk_pk_name= ? AND fk_pk_kategorie= ?");
+    $frage->execute(array($_SESSION["schwierigkeit"], $_SESSION["foreignkey"]));
 
 
-foreach ($frage->fetchAll() as $item) {
-    echo $item[1];
-    echo "<br>";
+    foreach ($frage->fetchAll() as $item) {
+        $antwort = getPDO()->prepare("SELECT * FROM antwort WHERE fk_pk_frage_id = ? ");
+        $antwort->execute(array($item[0]));
+        $antwort = $antwort->fetchAll();
 
-    $antwort = getPDO()->prepare("SELECT * FROM antwort WHERE fk_pk_frage_id = ? ");
-    $antwort->execute(array($item[0]));
-
-    echo "<form>";
-
-    foreach ($antwort->fetchAll() as $antwortitem) {
-
-        if ($antwortitem[2] == true) {
-
-            $checkboxes = <<<FORM
-<div class="auswertung richtig">
-    <input type="radio"  id="$antwortitem[0]" name="radio" disabled>
-    <label  for="$antwortitem[0]">$antwortitem[1]</label>
-</div>
-FORM;
-        } else {
-            $checkboxes = <<<FORM
-<div class="auswertung falsch">
-    <input type="radio"  id="$antwortitem[0]" name="radio" disabled>
-    <label  for="$antwortitem[0]">$antwortitem[1]</label>
-</div>
-FORM;
+        $richtig = '';
+        for ($i = 0; $i < sizeof($antwort); $i++) {
+            if ($antwort[$i][2]) {
+                $richtig = $antwort[$i][0];
+            }
         }
-        echo $checkboxes;
+
+
+        if(isset($_SESSION['Q'.$item[0]])) {
+
+            echo "<div id='answers'>";
+            if ($_SESSION['Q' . $item[0]] == $richtig) {
+                $counter += 3;
+                echo "<p class='gruen question'>" . $item[1] . " ------------------------ +3 Punkte</p>";
+            } else {
+                echo "<p class='rot question'>" . $item[1] . " ------------------ Leider keine Punkte</p>";
+            }
+            echo "</div>";
+        }else{
+            echo "<div id='answers'>";
+            echo "<p class='rot question'>" . $item[1] . " Der Timer ist leider vor BEantwortung abgelaufen</p>";
+            echo"</div>";
+        }
 
     }
-    echo "</form>";
+    echo "</div>";
+    echo "<p id='points' class='question'>Endergebnis in Punkten: " . $counter . "</p>";
+    ?>
 
-    echo "<br>";
-}
-?>
+    <form id="restart" method="get" action="index.php">
+        <input type="submit" value="Zurück zum Start">
+    </form>
+
+    <?php
+    require ("impressum.php");
+    ?>
 </body>
 </html>

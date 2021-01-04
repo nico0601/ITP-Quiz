@@ -1,3 +1,23 @@
+'use strict'
+
+nextone(null)
+
+function nextone(antwort_id) {
+    let xmlhttp = new XMLHttpRequest()
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            if (document.getElementById('inhalt') != null) {
+                document.getElementById('inhalt').innerHTML = this.responseText
+            }
+        }
+    }
+    xmlhttp.open('GET', 'index3.php?antwort=' + antwort_id, true)
+    xmlhttp.send()
+}
+
+
+//TIMER
+
 // Set the current time and the timer
 let countDownDate = new Date().getTime()
 let timer_ms = 25000
@@ -5,7 +25,16 @@ let timer_ms = 25000
 // Time calculations for minutes and seconds
 let minutes = Math.floor((timer_ms % (1000 * 60 * 60)) / (1000 * 60))
 let seconds = Math.floor((timer_ms % (1000 * 60)) / 1000)
-document.getElementById("timer").innerHTML = minutes + "m " + seconds + "s "
+// document.getElementById("timer").innerHTML = minutes + "m " + seconds + "s "
+
+//Adds or takes time from or to the Timer
+function add(truefalse){
+    if(truefalse){
+        timer_ms += 3000
+    }else{
+        timer_ms -= 3000
+    }
+}
 
 // Update the count down every 1 second
 let x = setInterval(function() {
@@ -36,7 +65,8 @@ let x = setInterval(function() {
     // If the count down is finished, forward to evaluation-page
     if (distance < 1000) {
         clearInterval(x)
-        window.location.assign("index.php")
+        window.location.assign("../Landingpage/index4.php")
         // document.getElementById("timer").innerHTML = "ran out of time"
     }
-}, 1000)
+}, 500)
+

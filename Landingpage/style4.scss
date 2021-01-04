@@ -1,0 +1,98 @@
+$primary-background: #99D6FF;
+$button-background: #2774A8;
+$headline-font: Rockwell;
+$button-font: Segoe UI;
+$footer-background: black;
+
+
+
+.gruen{
+  padding:0.5vw;
+  padding-left:2.5vw ;
+  background: #5AFF8C;
+  border: none;
+  border-radius: 10px;
+  margin:1vw;
+  font-family: $button-font;
+  font-weight: bold;
+  width: 40vw;
+  font-size: 1.3vw;
+
+}
+
+.rot{
+  padding:0.5vw;
+  padding-left:2.5vw ;
+  background: #FF6868;
+  border: none;
+  border-radius: 10px;
+  margin:1vw;
+  font-family: $button-font;
+  font-weight: bold;
+  width: 40vw;
+  font-size: 1.3vw;
+}
+
+.question{
+  display: none;
+
+}
+
+#header{
+  display: flex;
+  justify-content: center;
+  font-family: $headline-font;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 8.5vw;
+  margin:0;
+}
+
+p{
+  margin:4vh;
+  margin-bottom: 10vh;
+}
+
+body {
+  background: $primary-background;
+  width: 100%;
+  overflow-x: hidden;
+  margin:0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+#firstbackground{
+  margin:1vw;
+  padding: 1vw;
+  border: none;
+  border-radius: 10px;
+  background:#2774A8 ;
+  font-family: $button-font;
+  color:white;
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+#secondbackground{
+
+  width:60vw;
+  padding: 2vh;
+  border: none;
+  border-radius: 10px;
+  background: #6AB0E0;
+}
+
+#answers{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#points {
+  font-family: $button-font;
+  font-size: 2vw;
+  font-weight: bold;
+}
