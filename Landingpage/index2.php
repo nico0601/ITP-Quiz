@@ -10,8 +10,6 @@ session_start();
 </head>
 <body>
 <?php
-session_start();
-
 echo $_GET["schwierigkeit"];
 
 $_SESSION["schwierigkeit"] =  $_GET["schwierigkeit"];
