@@ -66,6 +66,7 @@ session_start();
 
     <?php
     require ("impressum.php");
+    session_unset();
     ?>
 </body>
 </html>

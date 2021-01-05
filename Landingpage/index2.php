@@ -1,4 +1,5 @@
 <?php
+session_unset();
 session_start();
 ?>
 <!DOCTYPE html>
@@ -7,23 +8,30 @@ session_start();
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <script type="text/javascript" src="kategorieauswahl.js" defer></script>
 </head>
 <body>
 <?php
-echo $_GET["schwierigkeit"];
-
-$_SESSION["schwierigkeit"] =  $_GET["schwierigkeit"];
+$_SESSION["schwierigkeit"] = $_GET["schwierigkeit"];
 ?>
+<header id="header">
+    <p>Fast. Furious. Quiz!</p>
+</header>
 
-<form method="get" action="ajax-fragen.php">
-    <input type="submit" name="kategorie" value="Fußball">
-    <input type="submit" name="kategorie" value="Ski">
-    <input type="submit" name="kategorie" value="Volleyball">
-</form>
+
+<div id="categories">
+    <p id="result">Kategorien</p>
+    <form method="get" id="categoryform" action="ajax-fragen.php">
+        <input class="category" id="fussball" type="submit" name="kategorie" value="Fußball">
+        <input class="category" id="ski" type="submit" name="kategorie" value="Ski">
+        <input class="category" id="volleyball" type="submit" name="kategorie" value="Volleyball">
+    </form>
+</div>
 
 
 <?php
-require ("impressum.php");
+require("impressum.php");
 ?>
 </body>
 </html>
