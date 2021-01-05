@@ -1,4 +1,5 @@
 <?php
+session_unset();
 session_start();
 ?>
 <!DOCTYPE html>
@@ -8,8 +9,12 @@ session_start();
     <title>Title</title>
     <script type="text/javascript" src="AJAX.js"></script>
     <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<header id="header">
+    <p>Fast. Furious. Quiz!</p>
+</header>
 <?php
 $_SESSION["foreignkey"] = '';
 
@@ -24,6 +29,8 @@ if ($_GET["kategorie"] == 'Ski') {
 echo "<div id='inhalt'>";
 echo "</div>";
 
+
+require ("impressum.php");
 ?>
 
 <p id="timer"></p>

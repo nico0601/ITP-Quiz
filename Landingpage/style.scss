@@ -1,13 +1,5 @@
 @import "../variables.scss";
 
-$primary-background: #99D6FF;
-$button-background: #2774A8;
-$headline-font: Rockwell;
-$button-font: Segoe UI;
-$footer-background: black;
-
-
-
 body {
   background: $primary-background;
   width: 100%;
@@ -103,6 +95,7 @@ h1 {
 
 #allfootercontent{
   padding-bottom: 5vh;
+  flex-shrink: 0;
 }
 
 #adminlink{
