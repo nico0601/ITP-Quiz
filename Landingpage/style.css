@@ -91,6 +91,7 @@ h1 {
 
 #allfootercontent {
   padding-bottom: 5vh;
+  flex-shrink: 0;
 }
 
 #adminlink {
