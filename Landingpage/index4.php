@@ -45,14 +45,14 @@ session_start();
             echo "<div id='answers'>";
             if ($_SESSION['Q' . $item[0]] == $richtig) {
                 $counter += 3;
-                echo "<p class='gruen question'>" . $item[1] . " ------------------------ +3 Punkte</p>";
+                echo "<p class='gruen question'>" . $item[1] . " <br> --- +3 Punkte ---</p>";
             } else {
-                echo "<p class='rot question'>" . $item[1] . " ------------------ Leider keine Punkte</p>";
+                echo "<p class='rot question'>" . $item[1] . " <br> --- Leider keine Punkte ---</p>";
             }
             echo "</div>";
         }else{
             echo "<div id='answers'>";
-            echo "<p class='rot question'>" . $item[1] . " Der Timer ist leider vor BEantwortung abgelaufen</p>";
+            echo "<p class='rot question'>" . $item[1] . " <br> --- Der Timer ist leider vor Beantwortung abgelaufen ---</p>";
             echo"</div>";
         }
 
