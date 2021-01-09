@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script type="text/javascript" src="AJAX.js"></script>
+    <script type="text/javascript" src="AJAX.js" defer></script>
     <link rel="stylesheet" href="style3.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,6 +15,7 @@ session_start();
 <header id="header">
     <p>Fast. Furious. Quiz!</p>
 </header>
+<p id="timer"></p>
 <?php
 $_SESSION["foreignkey"] = '';
 
@@ -33,7 +34,6 @@ echo "</div>";
 require ("impressum.php");
 ?>
 
-<p id="timer"></p>
 
 </body>
 </html>

@@ -1,14 +1,26 @@
 'use strict'
 
-nextone(null)
+nextone(null, null)
 
-function nextone(antwort_id) {
+
+function nextone(antwort_id, richtig) {
     let xmlhttp = new XMLHttpRequest()
     xmlhttp.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (document.getElementById('inhalt') != null) {
                 document.getElementById('inhalt').innerHTML = this.responseText
             }
+        }
+    }
+
+
+    if( richtig != null) {
+        if (richtig) {
+            let win = new Audio('../Audios/Correct.mp3')
+            win.play()
+        } else {
+            let win1 = new Audio('../Audios/Fail.wav')
+            win1.play()
         }
     }
     xmlhttp.open('GET', 'index3.php?antwort=' + antwort_id, true)
@@ -28,6 +40,7 @@ let seconds = Math.floor((timer_ms % (1000 * 60)) / 1000)
 // document.getElementById("timer").innerHTML = minutes + "m " + seconds + "s "
 
 //Adds or takes time from or to the Timer
+
 function add(truefalse){
     if(truefalse){
         timer_ms += 3000
@@ -70,3 +83,6 @@ let x = setInterval(function() {
     }
 }, 500)
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}

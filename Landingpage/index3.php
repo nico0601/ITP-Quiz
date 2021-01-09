@@ -27,7 +27,7 @@ if (isset($_SESSION["aktuelleFrage"])) {
 
         foreach ($antwort->fetchAll() as $item) {
             $heredoc = <<<ANTWORT
-            <p id='A$item[0]' onclick='nextone($item[0]); add($item[2])'>$item[1]</p>
+            <p id='A$item[0]' onclick='nextone($item[0], $item[2]); add($item[2])'>$item[1]</p>
             <br>
 ANTWORT;
             echo $heredoc;
