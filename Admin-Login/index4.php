@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!-- Fragen bearbeiten -->
 
 <!DOCTYPE html>
@@ -22,6 +23,11 @@
     <div class="frage">
         <form method="get" action="index2.php">
             <?php
+
+            if (!isset($_SESSION['passwort']) || !$_SESSION['passwort']) {
+                echo "<script>window.location = 'index.php'</script>";
+            }
+
             include_once("../getPDO.php");
             include_once("Fragen.php");
 

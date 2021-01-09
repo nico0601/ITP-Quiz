@@ -22,14 +22,17 @@
 
     <?php
 
+    $_SESSION['passwort'] = false;
+
     if (!isset($_SESSION['zaehler'])) {
         $_SESSION['zaehler'] = 0;
     }
 
     $hash = password_hash('admin', PASSWORD_BCRYPT);
 
-    if (isset($_GET['passwort'])) {
-        if (password_verify($_GET['passwort'], $hash)) {
+    if (isset($_POST['passwort'])) {
+        if (password_verify($_POST['passwort'], $hash)) {
+            $_SESSION['passwort'] = true;
             echo "<script>window.location = 'index2.php'</script>";
         } elseif ($_SESSION['zaehler'] === 2) {
             session_unset();
@@ -50,7 +53,7 @@
 
     ?>
 
-    <form method="get" action="../Admin-Login/index.php">
+    <form method="post" action="../Admin-Login/index.php">
 
         <input type="password" id="passwortEingabe" name="passwort" placeholder="Ihr Passwort..." autofocus>
         <button type="submit" id="button-weiter" value="Weiter">Weiter</button>

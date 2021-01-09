@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!-- Fragen hinzufügen -->
 
 <!DOCTYPE html>
@@ -21,6 +22,11 @@
 
 <section>
     <?php
+
+    if (!isset($_SESSION['passwort']) || !$_SESSION['passwort']) {
+        echo "<script>window.location = 'index.php'</script>";
+    }
+
     include_once("../getPDO.php");
     include_once("Kategorien.php");
     include_once("Fragen.php");
