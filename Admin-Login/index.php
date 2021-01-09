@@ -33,7 +33,7 @@
             echo "<script>window.location = 'index2.php'</script>";
         } elseif ($_SESSION['zaehler'] === 2) {
             session_unset();
-            echo "<script>window.location = '../Landingpage/index.php'</script>";
+            echo "<script>window.location = '../index.php'</script>";
         } else {
             $_SESSION['zaehler'] += 1;
             echo "<script>

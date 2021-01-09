@@ -6,7 +6,7 @@ session_unset();
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width">
     <title>Title</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Landingpage/style.css">
 </head>
 <body>
 <header id="header">
@@ -16,7 +16,7 @@ session_unset();
 
 
 <div id="category-buttons">
-    <form method="get" action="index2.php">
+    <form method="get" action="Landingpage/index2.php">
     <input name="schwierigkeit" class="choose-category" type="submit" id="noob-button" value="Noob">
     <input name="schwierigkeit" class="choose-category" type="submit" id="medium-button" value="Medium">
     <input name="schwierigkeit" class="choose-category" type="submit" id="pro-button" value="Pro">
@@ -24,7 +24,7 @@ session_unset();
 </div>
 
 <?php
-require ("impressum.php");
+require("./Landingpage/impressum.php");
 ?>
 </body>
 </html>
