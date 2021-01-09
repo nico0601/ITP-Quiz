@@ -57,13 +57,17 @@ session_start();
         }
 
     }
-    echo "</div>";
+    echo "<div id='points-zurueck'>";
     echo "<p id='points' class='question'>Endergebnis in Punkten: " . $counter . "</p>";
     ?>
 
     <form id="restart" method="get" action="index.php">
-        <input type="submit" value="Zurück zum Start">
+        <input id="zurueck-button" type="submit" value="Zurück zum Start">
     </form>
+
+    </div>
+
+</div>
 
     <?php
     require ("impressum.php");

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .gruen {
   padding: 0.5vw;
   padding-left: 2.5vw;
@@ -40,7 +41,7 @@
 
 p {
   margin: 4vh;
-  margin-bottom: 10vh;
+  margin-bottom: 4vh;
 }
 
 body {
@@ -79,10 +80,40 @@ body {
   flex-direction: column;
 }
 
+#points-zurueck {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 #points {
   font-family: Segoe UI;
   font-size: 2vw;
   font-weight: bold;
+  margin: 0;
+}
+
+#zurueck-button {
+  background-color: #0C3C5C;
+  color: white;
+  padding: 20px 30px;
+  display: none;
+  border: none;
+  border-radius: 20px;
+  box-sizing: border-box;
+  outline: none;
+  margin: 20px 0;
+  font-size: 1.8vw;
+  cursor: pointer;
+  width: min-content;
+  transition: 0.3s;
+}
+
+/* Der Hinzufügen- und Zurück-Button im Hover-Modus */
+#zurueck-button:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 /*# sourceMappingURL=style4.css.map */

@@ -36,23 +36,62 @@ body{
   border-radius: 10px;
   background: #6AB0E0;
   width: 60vw;
-}
-
-.answers{
-  margin:1vw;
-  padding: 1vw;
-  border:none;
-  border-radius: 10px;
-  background: #2774A8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 100px;
 }
 
 #ueberschrift{
+  color: white;
   font-size: 2vw;
   font-weight: bold;
   border:none;
   border-radius: 10px;
   background: #2774A8;
-  margin:1vw;
+  margin:1vw 0 2vw 0;
   padding: 1vw;
+  width: 55vw;
 }
 
+.answers{
+  color: white;
+  margin-bottom:1vw;
+  padding: 1vw;
+  border:none;
+  border-radius: 10px;
+  background: #2774A8;
+  width: 50vw;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.answers:hover {
+  transform: scale(1.02);
+  transition: 0.3s;
+  box-shadow: $basic-shadow;
+}
+
+
+#ergebnis-button {
+  background-color: $background-color3;
+  color: $basic-font-color;
+  padding: 20px 30px;
+  display: inline-block;
+  border: none;
+  border-radius: $primary-border-radius;
+  box-sizing: border-box;
+  outline: none;
+  margin: 20px 0;
+  font-size: 1.8vw;
+  cursor: pointer;
+  width: min-content;
+  transition: $button-transition;
+}
+
+/* Der Hinzufügen- und Zurück-Button im Hover-Modus */
+#ergebnis-button:hover {
+  transform: scale($button-hover-scale);
+  transition: $button-transition;
+  box-shadow: $basic-shadow;
+}
