@@ -8,14 +8,21 @@ session_start();
     <meta charset="UTF-8">
     <title>Title</title>
     <script type="text/javascript" src="AJAX.js" defer></script>
-    <link rel="stylesheet" href="style3.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style3.css">
 </head>
 <body>
-<header id="header">
-    <p>Fast. Furious. Quiz!</p>
-</header>
-<p id="timer"></p>
+
+<div id="ue">
+    <header id="header">
+        <p>Fast. Furious. Quiz!</p>
+    </header>
+    <div id="timerdiv">
+        <img id="uhr" src="../Bilder/Uhr.svg">
+        <p id="timer"></p>
+    </div>
+</div>
+
 <?php
 $_SESSION["foreignkey"] = '';
 
@@ -31,7 +38,7 @@ echo "<div id='inhalt'>";
 echo "</div>";
 
 
-require ("impressum.php");
+require("impressum.php");
 ?>
 
 

@@ -81,7 +81,7 @@ let x = setInterval(function() {
         window.location.assign("../Landingpage/index4.php")
         // document.getElementById("timer").innerHTML = "ran out of time"
     }
-}, 500)
+}, 200)
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));

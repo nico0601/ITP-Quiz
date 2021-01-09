@@ -76,6 +76,7 @@ body {
   height: inherit;
   clip-path: inset(0 0% 0 0);
   transition: 0.7s;
+  cursor: pointer;
 }
 
 #categories:hover > #result {

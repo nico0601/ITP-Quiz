@@ -1,14 +1,23 @@
 @import "../variables.scss";
 /* Der Timer */
+#ue {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+  margin-top: 20px;
+}
+#timerdiv {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 #timer {
   font-size: 2.5vw;
   font-weight: bold;
   color: $error-color;
   padding: 20px 30px;
-  justify-content: flex-end;
-  align-self: flex-end;
-  margin-bottom: 20px;
-  margin-top: 20px;
   text-align: center;
 }
 .klein {
@@ -21,6 +30,11 @@
   transition: $timer-transition ease-in;
 }
 
+#uhr {
+  width: 5vw;
+  height: 5vw;
+}
+
 
 
 body{
@@ -28,6 +42,11 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#header{
+  color: #4E4E4E;
+  font-size: 4vw;
 }
 
 #inhalt{

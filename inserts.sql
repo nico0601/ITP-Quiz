@@ -94,5 +94,3 @@ VALUES (1, 'Mit einem', false, 1),
         (52, 'Pro Satz 20', false, 26),
        (53, 'Weltmeister im Volleyball 2018', false, 27),
         (54, 'Österreichischer Staatsmeister im Volleyball 2017', true, 27);
-
-SELECT * FROM frage WHERE fk_pk_name='Medium' AND fk_pk_kategorie=3;

@@ -1,28 +1,22 @@
 @charset "UTF-8";
-.gruen {
+.gruen, .rot {
   padding: 0.5vw;
   padding-left: 2.5vw;
-  background: #5AFF8C;
   border: none;
   border-radius: 10px;
   margin: 1vw;
   font-family: Segoe UI;
   font-weight: bold;
   width: 40vw;
-  font-size: 1.3vw;
+  font-size: 1vw;
+}
+
+.gruen {
+  background: #5AFF8C;
 }
 
 .rot {
-  padding: 0.5vw;
-  padding-left: 2.5vw;
   background: #FF6868;
-  border: none;
-  border-radius: 10px;
-  margin: 1vw;
-  font-family: Segoe UI;
-  font-weight: bold;
-  width: 40vw;
-  font-size: 1.3vw;
 }
 
 .question {
@@ -63,6 +57,7 @@ body {
   font-family: Segoe UI;
   color: white;
   font-size: 2vw;
+  cursor: pointer;
   font-weight: bold;
 }
 
@@ -72,6 +67,7 @@ body {
   border: none;
   border-radius: 10px;
   background: #6AB0E0;
+  margin: 50px 0 200px 0;
 }
 
 #answers {
@@ -84,11 +80,12 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 #points {
   font-family: Segoe UI;
-  font-size: 2vw;
+  font-size: 1.5vw;
   font-weight: bold;
   margin: 0;
 }
@@ -103,7 +100,7 @@ body {
   box-sizing: border-box;
   outline: none;
   margin: 20px 0;
-  font-size: 1.8vw;
+  font-size: 1.5vw;
   cursor: pointer;
   width: min-content;
   transition: 0.3s;
