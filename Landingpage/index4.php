@@ -8,6 +8,7 @@ session_start();
     <title>Title</title>
     <link rel="stylesheet" href="style4.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../Logos/Schwarzer%20Hintergrund/Logo.svg">
     <script type="text/javascript" src="auswertung.js" defer></script>
 </head>
 <body>
