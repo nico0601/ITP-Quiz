@@ -19,7 +19,7 @@ if (isset($_SESSION["aktuelleFrage"])) {
     }
     $_SESSION["aktuelleFrage"] += 1;
     if (isset($frage[$_SESSION["aktuelleFrage"]][1])) {
-        echo $frage[$_SESSION["aktuelleFrage"]][1];
+        echo '<p id="ueberschrift">'.$frage[$_SESSION["aktuelleFrage"]][1].'</p>';
         $antwort = getPDO()->prepare("SELECT * FROM antwort WHERE fk_pk_frage_id=?");
         $antwort->execute(array($frage[$_SESSION["aktuelleFrage"]][0]));
 
@@ -27,7 +27,7 @@ if (isset($_SESSION["aktuelleFrage"])) {
 
         foreach ($antwort->fetchAll() as $item) {
             $heredoc = <<<ANTWORT
-            <p id='A$item[0]' onclick='nextone($item[0], $item[2]); add($item[2])'>$item[1]</p>
+            <p class='answers' id='A$item[0]' onclick='nextone($item[0], $item[2]); add($item[2])'>$item[1]</p>
             <br>
 ANTWORT;
             echo $heredoc;

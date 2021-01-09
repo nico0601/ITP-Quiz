@@ -21,4 +21,37 @@
   transition: 1s ease-in;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#inhalt {
+  font-family: Segoe UI;
+  border: none;
+  border-radius: 10px;
+  background: #6AB0E0;
+  width: 60vw;
+}
+
+.answers {
+  margin: 1vw;
+  padding: 1vw;
+  border: none;
+  border-radius: 10px;
+  background: #2774A8;
+}
+
+#ueberschrift {
+  font-size: 2vw;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: #2774A8;
+  margin: 1vw;
+  padding: 1vw;
+}
+
 /*# sourceMappingURL=style3.css.map */

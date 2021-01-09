@@ -32,7 +32,7 @@ function nextone(antwort_id, richtig) {
 
 // Set the current time and the timer
 let countDownDate = new Date().getTime()
-let timer_ms = 25000
+let timer_ms = 30000 * 60
 
 // Time calculations for minutes and seconds
 let minutes = Math.floor((timer_ms % (1000 * 60 * 60)) / (1000 * 60))
