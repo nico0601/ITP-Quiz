@@ -7,7 +7,7 @@ function getPDO()
 //    $passwd = "quiz";
 //
 //    try {
-//        $pdo = new PDO("mysql:host=$host;dbname=$db", "$user", "$passwd");
+//        $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", "$user", "$passwd");
 //    } catch (PDOException $e) {
 //        echo 'Verbindung fehlgeschlagen';
 //    }
@@ -19,7 +19,7 @@ function getPDO()
     $passwd = "";
 
     try {
-        $pdo = new PDO("mysql:host=$host;dbname=$db", "$user", "$passwd");
+        $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", "$user", "$passwd");
     } catch (PDOException $e) {
         echo 'Verbindung fehlgeschlagen';
     }
