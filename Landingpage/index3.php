@@ -12,7 +12,6 @@ if (!isset($_SESSION["aktuelleFrage"])) {
     $_SESSION["aktuelleFrage"] = -1;
 }
 
-
 if (isset($_SESSION["aktuelleFrage"])) {
     if ($_GET["antwort"] != "null") {
         $_SESSION['Q' . $frage[$_SESSION["aktuelleFrage"]][0]] = $_GET["antwort"];
