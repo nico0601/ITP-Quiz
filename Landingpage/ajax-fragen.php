@@ -6,10 +6,11 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Quiz</title>
     <script type="text/javascript" src="AJAX.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style3.css">
+    <link rel="icon" href="../Logos/Schwarzer%20Hintergrund/Logo.svg">
 </head>
 <body>
 

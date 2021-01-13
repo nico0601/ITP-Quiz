@@ -6,9 +6,10 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Kategorie-Auswahl</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
+    <link rel="icon" href="../Logos/Schwarzer%20Hintergrund/Logo.svg">
     <script type="text/javascript" src="kategorieauswahl.js" defer></script>
 </head>
 <body>

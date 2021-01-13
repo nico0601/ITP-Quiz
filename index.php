@@ -5,8 +5,9 @@ session_unset();
 <html lang="en">
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width">
-    <title>Title</title>
+    <title>Landingpage</title>
     <link rel="stylesheet" href="Landingpage/style.css">
+    <link rel="icon" href="../Logos/Schwarzer%20Hintergrund/Logo.svg">
 </head>
 <body>
 <header id="header">

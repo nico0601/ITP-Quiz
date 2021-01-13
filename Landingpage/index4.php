@@ -5,7 +5,7 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Endergebnis</title>
     <link rel="stylesheet" href="style4.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../Logos/Schwarzer%20Hintergrund/Logo.svg">
