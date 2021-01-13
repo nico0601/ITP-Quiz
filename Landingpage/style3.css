@@ -102,7 +102,7 @@ body {
   border-radius: 20px;
   box-sizing: border-box;
   outline: none;
-  margin: 20px 0;
+  margin: 10vh 0;
   font-size: 1.8vw;
   cursor: pointer;
   width: min-content;

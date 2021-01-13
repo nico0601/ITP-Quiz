@@ -38,7 +38,6 @@ if ($_GET["kategorie"] == 'Ski') {
 echo "<div id='inhalt'>";
 echo "</div>";
 
-
 require("impressum.php");
 ?>
 

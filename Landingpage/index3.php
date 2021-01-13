@@ -18,7 +18,7 @@ if (isset($_SESSION["aktuelleFrage"])) {
     }
     $_SESSION["aktuelleFrage"] += 1;
     if (isset($frage[$_SESSION["aktuelleFrage"]][1])) {
-        echo '<p id="ueberschrift">'.$frage[$_SESSION["aktuelleFrage"]][1].'</p>';
+        echo '<p id="ueberschrift">' . $frage[$_SESSION["aktuelleFrage"]][1] . '</p>';
         $antwort = getPDO()->prepare("SELECT * FROM antwort WHERE fk_pk_frage_id=?");
         $antwort->execute(array($frage[$_SESSION["aktuelleFrage"]][0]));
 
@@ -31,7 +31,7 @@ ANTWORT;
     } else {
         $heredoc1 = <<<ERGEBNIS
         <form method='get' action='index4.php'>
-        <input id="ergebnis-button" type='submit' value='Zum Ergebnis'>
+        <input id="ergebnis-button" type='submit' value='Hier geht es weiter zu ihrem Ergebnis'>
         </form>
 ERGEBNIS;
 
@@ -39,4 +39,3 @@ ERGEBNIS;
     }
 }
 ?>
-
