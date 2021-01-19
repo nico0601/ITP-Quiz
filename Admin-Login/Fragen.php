@@ -55,7 +55,7 @@ class Fragen
                         <input class='button-bearbeiten' value="$frage[0]" name="button-bearbeiten$frage[0]" type='submit'>
                     </form>
                     <form method="post" action="./index.php">
-                        <input class='button-loeschen' value="$frage[0]" name="button-loeschen$frage[0]" type='submit'>
+                        <input class='button-loeschen' value="$frage[0]" name="button-loeschen" type='submit'>
                     </form>
                 </div>
             </div>
@@ -69,11 +69,9 @@ ENDE;
     /* löscht gewünschte Frage aus der Datenbank */
     public function loeschen()
     {
-        for ($i = 0; $i <= $this->highestFrageID(); $i++) {
-            if (isset($_POST['button-loeschen' . $i]) && preg_match("/^\d*$/", $_POST['button-loeschen' . $i])) {
-                $sql = getPDO()->prepare("DELETE FROM frage WHERE pk_frage_id = " . $i);
-                $sql->execute();
-            }
+        if (isset($_POST['button-loeschen']) && preg_match("/^\d*$/", $_POST['button-loeschen'])) {
+            $sql = getPDO()->prepare("DELETE FROM frage WHERE pk_frage_id = " . $_POST['button-loeschen']);
+            $sql->execute();
         }
     }
 
@@ -84,7 +82,7 @@ ENDE;
         /* Antwort1 & Antwort2 müssen gesetzt sein wenn Frage gesetzt ist (required-attribute) */
         if (isset($_POST['frage-3'])) {
 
-            $pattern_frage_antwort = "/^[\w\?\., €]+$/";
+            $pattern_frage_antwort = "/^[\wäAöÖüÜ\?\., €]+$/";
 
             $frageID = $this->nextFrageID();
 
@@ -93,8 +91,7 @@ ENDE;
                 preg_match("/^\w*$/", $_POST['richtig-3']) &&
                 preg_match($pattern_frage_antwort, $_POST['frage-3']) &&
                 preg_match($pattern_frage_antwort, $_POST['antwort1-3']) &&
-                preg_match($pattern_frage_antwort, $_POST['antwort2-3']))
-            {
+                preg_match($pattern_frage_antwort, $_POST['antwort2-3'])) {
                 $schwierigkeit = $_POST['schwierigkeit-3'];
                 $kategorie = $_POST['kategorie-3'];
                 $richtig = $_POST['richtig-3'];
@@ -143,13 +140,12 @@ ENDE;
     {
         if (isset($_POST['frage-4'])) {
 
-            $pattern_frage_antwort = "/^[\w\?\., €]+$/";
+            $pattern_frage_antwort = "/^[\wäAöÖüÜ\?\., €]+$/";
 
             if (preg_match($pattern_frage_antwort, $_POST['frage-4']) &&
                 preg_match($pattern_frage_antwort, $_POST['antwort1-4']) &&
                 preg_match($pattern_frage_antwort, $_POST['antwort2-4']) &&
-                preg_match("/^\d*$/", $_POST['frageID-4']))
-            {
+                preg_match("/^\d*$/", $_POST['frageID-4'])) {
                 $frage = trim($_POST['frage-4']);
                 $antwort1 = str_replace(".", "", trim($_POST['antwort1-4']));
                 $antwort2 = str_replace(".", "", trim($_POST['antwort2-4']));
