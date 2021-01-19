@@ -34,7 +34,7 @@ session_start();
         }
     }
 
-    $hash = password_hash('PtQuIzDnS', PASSWORD_BCRYPT);
+    $hash = password_hash('Pt6?QuIzD2n11S14', PASSWORD_BCRYPT);
 
     if ((isset($_POST['passwort']) && password_verify($_POST['passwort'], $hash)) || isset($_POST['zurueck']) || isset($_POST['frageID-4'])) {
 
