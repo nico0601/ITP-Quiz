@@ -84,7 +84,7 @@ ENDE;
         /* Antwort1 & Antwort2 müssen gesetzt sein wenn Frage gesetzt ist (required-attribute) */
         if (isset($_POST['frage-3'])) {
 
-            $pattern_frage_antwort = "/^[\w\?\., ]+$/";
+            $pattern_frage_antwort = "/^[\w\?\., €]+$/";
 
             $frageID = $this->nextFrageID();
 
@@ -143,7 +143,7 @@ ENDE;
     {
         if (isset($_POST['frage-4'])) {
 
-            $pattern_frage_antwort = "/^[\w\?\., ]+$/";
+            $pattern_frage_antwort = "/^[\w\?\., €]+$/";
 
             if (preg_match($pattern_frage_antwort, $_POST['frage-4']) &&
                 preg_match($pattern_frage_antwort, $_POST['antwort1-4']) &&
