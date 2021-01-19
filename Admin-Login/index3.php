@@ -15,7 +15,7 @@
             integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="./style3.css">
-    <link rel="icon" href="../Logos/Schwarzer%20Hintergrund/Logo.png">
+    <link rel="icon" href="../Logos/Schwarzer%20Hintergrund/Logo.svg">
     <script language="javascript" src="js3.js" defer></script>
 </head>
 <body>
@@ -39,7 +39,7 @@
     ?>
 
     <div class="frage">
-        <form method="get" action="index2.php" class="was-validated">
+        <form method="post" action="index2.php" class="was-validated">
             <?php
             $kategorienObjekt = new Kategorien();
 
@@ -92,7 +92,7 @@ ENDE;
             <input id="senden" type="submit" value="Erstellen">
         </form>
 
-       <form action="./index2.php" method="get">
+       <form action="./index2.php" method="post">
            <input id="zurueck" type="submit" value="Zurück">
        </form>
 

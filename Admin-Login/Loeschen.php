@@ -9,7 +9,7 @@ function loeschen() {
     }
 
     for ($i = 0; $i <= $lastID; $i++) {
-        if (isset($_GET['button-loeschen'.$i])) {
+        if (isset($_POST['button-loeschen'.$i])) {
             if ($_SESSION['alt'] != $_GET['button-loeschen'.$i]) {
                 $sql = getPDO()->prepare("DELETE FROM frage WHERE pk_frage_id = " . $i);
                 $sql->execute();

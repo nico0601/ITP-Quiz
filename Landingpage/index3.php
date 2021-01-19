@@ -30,7 +30,7 @@ ANTWORT;
         }
     } else {
         $heredoc1 = <<<ERGEBNIS
-        <form method='get' action='index4.php'>
+        <form method='post' action='index4.php'>
         <input id="ergebnis-button" type='submit' value='Hier geht es weiter zu ihrem Ergebnis'>
         </form>
 ERGEBNIS;

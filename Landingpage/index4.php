@@ -61,7 +61,7 @@ session_start();
     echo "<p id='points' class='question'>Endergebnis in Punkten: " . $counter . "</p>";
     ?>
 
-    <form id="restart" method="get" action="../index.php">
+    <form id="restart" method="post" action="../index.php">
         <input id="zurueck-button" type="submit" value="Zurück zum Start">
     </form>
 

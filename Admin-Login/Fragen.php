@@ -51,10 +51,10 @@ class Fragen
             <div class='frage'>
                 <p class='ue-frage'>$frage[1]</p>
                 <div class="button-bearbeiten-loeschen">
-                    <form method='get' action='./index4.php'>
+                    <form method='post' action='./index4.php'>
                         <input class='button-bearbeiten' value="$frage[0]" name="button-bearbeiten$frage[0]" type='submit'>
                     </form>
-                    <form method="get" action="./index2.php">
+                    <form method="post" action="./index2.php">
                         <input class='button-loeschen' value="$frage[0]" name="button-loeschen$frage[0]" type='submit'>
                     </form>
                 </div>
@@ -70,7 +70,7 @@ ENDE;
     public function loeschen()
     {
         for ($i = 0; $i <= $this->highestFrageID(); $i++) {
-            if (isset($_GET['button-loeschen' . $i])) {
+            if (isset($_POST['button-loeschen' . $i]) && preg_match("/^\d*$/", $_POST['button-loeschen' . $i])) {
                 $sql = getPDO()->prepare("DELETE FROM frage WHERE pk_frage_id = " . $i);
                 $sql->execute();
             }
@@ -82,40 +82,45 @@ ENDE;
     public function hinzufuegen()
     {
         /* Antwort1 & Antwort2 müssen gesetzt sein wenn Frage gesetzt ist (required-attribute) */
-        if (isset($_GET['frage-3'])) {
+        if (isset($_POST['frage-3'])) {
 
-            $schwierigkeit = $_GET['schwierigkeit-3'];
-            $kategorie = $_GET['kategorie-3'];
-            $richtig = $_GET['richtig-3'];
-            $frage = trim($_GET['frage-3']);
-            $antwort1 = str_replace(".", "", trim($_GET['antwort1-3']));
-            $antwort2 = str_replace(".", "", trim($_GET['antwort2-3']));
+            $pattern_frage_antwort = "/^[\w\?\., ]+$/";
 
             $frageID = $this->nextFrageID();
 
-            $pattern = "/^[\w\s]*$/";
+            if (preg_match("/^\w*$/", $_POST['schwierigkeit-3']) &&
+                preg_match("/^\w*$/", $_POST['kategorie-3']) &&
+                preg_match("/^\w*$/", $_POST['richtig-3']) &&
+                preg_match($pattern_frage_antwort, $_POST['frage-3']) &&
+                preg_match($pattern_frage_antwort, $_POST['antwort1-3']) &&
+                preg_match($pattern_frage_antwort, $_POST['antwort2-3']))
+            {
+                $schwierigkeit = $_POST['schwierigkeit-3'];
+                $kategorie = $_POST['kategorie-3'];
+                $richtig = $_POST['richtig-3'];
+                $frage = trim($_POST['frage-3']);
+                $antwort1 = str_replace(".", "", trim($_POST['antwort1-3']));
+                $antwort2 = str_replace(".", "", trim($_POST['antwort2-3']));
 
-            if (preg_match($pattern, $frage)) {
-                $frage = $frage . "?";
-            }
+                $frage = preg_match("/^[\w\s]*$/", $frage) ? $frage = $frage . "?" : $frage;
 
 
-            $sql = getPDO()->prepare('INSERT INTO frage VALUES (?, ?, ?, ?)');
-            $sql->execute(array($frageID, $frage, $schwierigkeit, $kategorie));
+                $sql = getPDO()->prepare('INSERT INTO frage VALUES (?, ?, ?, ?)');
+                $sql->execute(array($frageID, $frage, $schwierigkeit, $kategorie));
 
 
-            $this->antwortenHinzufuegen($antwort1, $richtig == 1, $frageID);
-            $this->antwortenHinzufuegen($antwort2, $richtig == 2, $frageID);
+                $this->antwortenHinzufuegen($antwort1, $richtig == 1, $frageID);
+                $this->antwortenHinzufuegen($antwort2, $richtig == 2, $frageID);
 
-
-            /* Zusätzliche Antworten */
-            if (isset($_GET['antwort3-3']) && !preg_match("/^$/", $_GET['antwort3-3'])) {
-                $antwort3 = str_replace(".", "", trim($_GET['antwort3-3']));
-                $this->antwortenHinzufuegen($antwort3, $richtig == 3, $frageID);
-            }
-            if (isset($_GET['antwort4-3']) && !preg_match("/^$/", $_GET['antwort4-3'])) {
-                $antwort4 = str_replace(".", "", trim($_GET['antwort4-3']));
-                $this->antwortenHinzufuegen($antwort4, $richtig == 4, $frageID);
+                /* Zusätzliche Antworten */
+                if (isset($_POST['antwort3-3']) && !preg_match("/^$/", $_POST['antwort3-3']) && preg_match($pattern_frage_antwort, $_POST['antwort3-3'])) {
+                    $antwort3 = str_replace(".", "", trim($_POST['antwort3-3']));
+                    $this->antwortenHinzufuegen($antwort3, $richtig == 3, $frageID);
+                }
+                if (isset($_POST['antwort4-3']) && !preg_match("/^$/", $_POST['antwort4-3']) && preg_match($pattern_frage_antwort, $_POST['antwort4-3'])) {
+                    $antwort4 = str_replace(".", "", trim($_POST['antwort4-3']));
+                    $this->antwortenHinzufuegen($antwort4, $richtig == 4, $frageID);
+                }
             }
         }
     }
@@ -136,33 +141,38 @@ ENDE;
     /* bearbeitet eine Frage mit ihren Antworten */
     public function bearbeiten()
     {
-        if (isset($_GET['frage-4'])) {
-            $frage = trim($_GET['frage-4']);
-            $antwort1 = str_replace(".", "", trim($_GET['antwort1-4']));
-            $antwort2 = str_replace(".", "", trim($_GET['antwort2-4']));
-            $frageID = $_GET['frageID-4'];
+        if (isset($_POST['frage-4'])) {
 
-            $pattern = "/^[\w\s]*$/";
+            $pattern_frage_antwort = "/^[\w\?\., ]+$/";
 
-            if (preg_match($pattern, $frage)) {
-                $frage = $frage . "?";
-            }
+            if (preg_match($pattern_frage_antwort, $_POST['frage-4']) &&
+                preg_match($pattern_frage_antwort, $_POST['antwort1-4']) &&
+                preg_match($pattern_frage_antwort, $_POST['antwort2-4']) &&
+                preg_match("/^\d*$/", $_POST['frageID-4']))
+            {
+                $frage = trim($_POST['frage-4']);
+                $antwort1 = str_replace(".", "", trim($_POST['antwort1-4']));
+                $antwort2 = str_replace(".", "", trim($_POST['antwort2-4']));
+                $frageID = $_POST['frageID-4'];
 
-            $sql = getPDO()->prepare("UPDATE frage SET frage = ? WHERE pk_frage_id = ?");
-            $sql->execute(array($frage, $frageID));
+                $frage = preg_match("/^[\w\s]*$/", $frage) ? $frage = $frage . "?" : $frage;
 
-            $this->antwortenBearbeiten($antwort1, 0, $frageID);
-            $this->antwortenBearbeiten($antwort2, 1, $frageID);
+                $sql = getPDO()->prepare("UPDATE frage SET frage = ? WHERE pk_frage_id = ?");
+                $sql->execute(array($frage, $frageID));
+
+                $this->antwortenBearbeiten($antwort1, 0, $frageID);
+                $this->antwortenBearbeiten($antwort2, 1, $frageID);
 
 
-            /* Zusätzliche Antworten */
-            if (isset($_GET['antwort3-4']) && !preg_match("/^$/", $_GET['antwort3-4'])) {
-                $antwort3 = str_replace(".", "", trim($_GET['antwort3-4']));
-                $this->antwortenBearbeiten($antwort3, 2, $frageID);
-            }
-            if (isset($_GET['antwort4-4']) && !preg_match("/^$/", $_GET['antwort4-4'])) {
-                $antwort4 = str_replace(".", "", trim($_GET['antwort4-4']));
-                $this->antwortenBearbeiten($antwort4, 3, $frageID);
+                /* Zusätzliche Antworten */
+                if (isset($_POST['antwort3-4']) && !preg_match("/^$/", $_POST['antwort3-4']) && preg_match($pattern_frage_antwort, $_POST['antwort3-4'])) {
+                    $antwort3 = str_replace(".", "", trim($_POST['antwort3-4']));
+                    $this->antwortenBearbeiten($antwort3, 2, $frageID);
+                }
+                if (isset($_POST['antwort4-4']) && !preg_match("/^$/", $_POST['antwort4-4']) && preg_match($pattern_frage_antwort, $_POST['antwort4-4'])) {
+                    $antwort4 = str_replace(".", "", trim($_POST['antwort4-4']));
+                    $this->antwortenBearbeiten($antwort4, 3, $frageID);
+                }
             }
         }
     }

@@ -47,10 +47,10 @@
     ?>
 
     <div id="button-hinzufuegen-zurueck">
-        <form method="get" action="./index3.php">
+        <form method="post" action="./index3.php">
             <input type="submit" class="button" id="button-hinzufuegen" value="Frage erstellen">
         </form>
-        <form method="get" action="../index.php">
+        <form method="post" action="../index.php">
             <input type="submit" class="button" id="button-zurueck" value="Zurück">
         </form>
     </div>

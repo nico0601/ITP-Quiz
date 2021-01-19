@@ -1,4 +1,4 @@
-use quiz;
+use quiz_db;
 
 INSERT INTO kategorie (pk_id, kategorie, fk_pk_kategorie_id)
 VALUES (1, 'Ski-Sport', null),

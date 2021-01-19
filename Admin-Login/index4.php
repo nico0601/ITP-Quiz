@@ -15,13 +15,13 @@
             integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="./style4.css">
-    <link rel="icon" href="../Logos/Schwarzer%20Hintergrund/Logo.png">
+    <link rel="icon" href="../Logos/Schwarzer%20Hintergrund/Logo.svg">
 </head>
 <body>
 
 <section>
     <div class="frage">
-        <form method="get" action="index2.php">
+        <form method="post" action="index2.php">
             <?php
 
             if (!isset($_SESSION['passwort']) || !$_SESSION['passwort']) {
@@ -40,7 +40,7 @@
             $fragenObjekt = new Fragen($fragen);
 
             for ($i = 0; $i <= $fragenObjekt->highestFrageID(); $i++) {
-                if (isset($_GET['button-bearbeiten' . $i])) {
+                if (isset($_POST['button-bearbeiten' . $i])) {
                     $frageID = $i;
                 }
             }
@@ -99,7 +99,7 @@ ENDE;
 
         </form>
 
-        <form method="get" action="../Admin-Login/index2.php">
+        <form method="post" action="../Admin-Login/index2.php">
             <input type="submit" class="button" id="button-zurueck" value="Zurück">
         </form>
 

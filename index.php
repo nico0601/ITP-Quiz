@@ -17,7 +17,7 @@ session_unset();
 
 
 <div id="category-buttons">
-    <form method="get" action="Landingpage/index2.php">
+    <form method="post" action="Landingpage/index2.php">
     <input name="schwierigkeit" class="choose-category" type="submit" id="noob-button" value="Noob">
     <input name="schwierigkeit" class="choose-category" type="submit" id="medium-button" value="Medium">
     <input name="schwierigkeit" class="choose-category" type="submit" id="pro-button" value="Pro">

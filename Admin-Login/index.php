@@ -28,7 +28,7 @@
         $_SESSION['zaehler'] = 0;
     }
 
-    $hash = password_hash('admin', PASSWORD_BCRYPT);
+    $hash = password_hash('PtQuIzDnS', PASSWORD_BCRYPT);
 
     if (isset($_POST['passwort'])) {
         if (password_verify($_POST['passwort'], $hash)) {

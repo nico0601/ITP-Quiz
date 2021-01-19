@@ -36,7 +36,7 @@ nico.naumann@htl.rennweg.at
 </div>
 
 <div id="admin-div">
-<form method="get" action="../Admin-Login/index.php">
+<form method="post" action="../Admin-Login/index.php">
 <input type="submit" id="admin-button" value="Admin-Bereich">
 </form>
 </div>

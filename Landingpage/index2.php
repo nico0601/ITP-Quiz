@@ -14,7 +14,7 @@ session_start();
 </head>
 <body>
 <?php
-$_SESSION["schwierigkeit"] = $_GET["schwierigkeit"];
+$_SESSION["schwierigkeit"] = $_POST["schwierigkeit"];
 ?>
 <header id="header">
     <p>Fast. Furious. Quiz!</p>
@@ -23,7 +23,7 @@ $_SESSION["schwierigkeit"] = $_GET["schwierigkeit"];
 
 <div id="categories">
     <p id="result">Kategorien</p>
-    <form method="get" id="categoryform" action="ajax-fragen.php">
+    <form method="post" id="categoryform" action="ajax-fragen.php">
         <input class="category" id="fussball" type="submit" name="kategorie" value="Fußball">
         <input class="category" id="ski" type="submit" name="kategorie" value="Ski">
         <input class="category" id="volleyball" type="submit" name="kategorie" value="Volleyball">

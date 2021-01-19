@@ -27,9 +27,9 @@ session_start();
 <?php
 $_SESSION["foreignkey"] = '';
 
-if ($_GET["kategorie"] == 'Ski') {
+if ($_POST["kategorie"] == 'Ski') {
     $_SESSION["foreignkey"] = 1;
-} elseif ($_GET["kategorie"] == 'Fußball') {
+} elseif ($_POST["kategorie"] == 'Fußball') {
     $_SESSION["foreignkey"] = 2;
 } else {
     $_SESSION["foreignkey"] = 3;

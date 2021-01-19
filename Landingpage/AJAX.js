@@ -27,7 +27,7 @@ function nextone(antwort_id, richtig) {
             fail.play()
         }
     }
-    xmlhttp.open('GET', 'index3.php?antwort=' + antwort_id, true)
+    xmlhttp.open('get', 'index3.php?antwort=' + antwort_id, true)
     xmlhttp.send()
 }
 
