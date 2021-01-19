@@ -99,7 +99,7 @@ ENDE;
                 $antwort1 = str_replace(".", "", trim($_POST['antwort1-3']));
                 $antwort2 = str_replace(".", "", trim($_POST['antwort2-3']));
 
-                $frage = preg_match("/^[\w\s]*$/", $frage) ? $frage = $frage . "?" : $frage;
+                $frage = preg_match("/^[\wäAöÖüÜ\s]*$/", $frage) ? $frage = $frage . "?" : $frage;
 
 
                 $sql = getPDO()->prepare('INSERT INTO frage VALUES (?, ?, ?, ?)');
@@ -151,7 +151,7 @@ ENDE;
                 $antwort2 = str_replace(".", "", trim($_POST['antwort2-4']));
                 $frageID = $_POST['frageID-4'];
 
-                $frage = preg_match("/^[\w\s]*$/", $frage) ? $frage = $frage . "?" : $frage;
+                $frage = preg_match("/^[\wäAöÖüÜ\s]*$/", $frage) ? $frage = $frage . "?" : $frage;
 
                 $sql = getPDO()->prepare("UPDATE frage SET frage = ? WHERE pk_frage_id = ?");
                 $sql->execute(array($frage, $frageID));
