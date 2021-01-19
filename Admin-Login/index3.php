@@ -23,6 +23,15 @@
 <section>
     <?php
 
+    if (isset($_SESSION['timeout'])) {
+        if (isset($_SESSION['last_visit'])) {
+            if (time() - $_SESSION['last_visit'] > $_SESSION['timeout']) {
+                session_destroy();
+                echo "<script>window.location = './index.php'</script>";
+            }
+        }
+    }
+
     if (!isset($_SESSION['passwort']) || !$_SESSION['passwort']) {
         echo "<script>window.location = 'index.php'</script>";
     }
@@ -39,7 +48,7 @@
     ?>
 
     <div class="frage">
-        <form method="post" action="index2.php" class="was-validated">
+        <form method="post" action="./index.php" class="was-validated">
             <?php
             $kategorienObjekt = new Kategorien();
 
@@ -89,11 +98,11 @@ ENDE;
                     <label for="radio4" class="custom-control-label"></label>
                 </div>
             </div>
-            <input id="senden" type="submit" value="Erstellen">
+            <input id="senden" type="submit" name="zurueck" value="Erstellen">
         </form>
 
-       <form action="./index2.php" method="post">
-           <input id="zurueck" type="submit" value="Zurück">
+       <form action="./index.php" method="post">
+           <input id="zurueck" type="submit" name="zurueck" value="Zurück">
        </form>
 
         <div id="plus-minus">

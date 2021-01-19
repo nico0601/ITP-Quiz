@@ -15,7 +15,6 @@ session_unset();
 </header>
 
 
-
 <div id="category-buttons">
     <form method="post" action="Landingpage/index2.php">
     <input name="schwierigkeit" class="choose-category" type="submit" id="noob-button" value="Noob">

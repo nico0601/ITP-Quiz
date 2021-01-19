@@ -21,8 +21,17 @@
 
 <section>
     <div class="frage">
-        <form method="post" action="index2.php">
+        <form method="post" action="index.php">
             <?php
+
+            if (isset($_SESSION['timeout'])) {
+                if (isset($_SESSION['last_visit'])) {
+                    if (time() - $_SESSION['last_visit'] > $_SESSION['timeout']) {
+                        session_destroy();
+                        echo "<script>window.location = './index.php'</script>";
+                    }
+                }
+            }
 
             if (!isset($_SESSION['passwort']) || !$_SESSION['passwort']) {
                 echo "<script>window.location = 'index.php'</script>";
@@ -99,8 +108,8 @@ ENDE;
 
         </form>
 
-        <form method="post" action="../Admin-Login/index2.php">
-            <input type="submit" class="button" id="button-zurueck" value="Zurück">
+        <form method="post" action="../Admin-Login/index.php">
+            <input type="submit" class="button" id="button-zurueck" name="zurueck" value="Zurück">
         </form>
 
     </div>

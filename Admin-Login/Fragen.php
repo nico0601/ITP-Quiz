@@ -54,7 +54,7 @@ class Fragen
                     <form method='post' action='./index4.php'>
                         <input class='button-bearbeiten' value="$frage[0]" name="button-bearbeiten$frage[0]" type='submit'>
                     </form>
-                    <form method="post" action="./index2.php">
+                    <form method="post" action="./index.php">
                         <input class='button-loeschen' value="$frage[0]" name="button-loeschen$frage[0]" type='submit'>
                     </form>
                 </div>
