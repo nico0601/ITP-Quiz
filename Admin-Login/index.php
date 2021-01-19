@@ -38,7 +38,6 @@ session_start();
 
     if ((isset($_POST['passwort']) && password_verify($_POST['passwort'], $hash)) || isset($_POST['zurueck']) || isset($_POST['frageID-4']) || isset($_POST['button-loeschen'])) {
 
-        $_SESSION['timeout'] = 60;
         $_SESSION['last_visit'] = time();
         $_SESSION['passwort'] = true;
 
